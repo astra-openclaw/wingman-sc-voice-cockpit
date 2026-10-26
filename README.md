@@ -8,16 +8,42 @@ Ask which key your own profile uses, send verified Wingman commands from a phone
 and mark or navigate to your own saved locations. Voice and tablet actions share remembered
 system lights; the navigation desk stays on the same page.
 
-## Synthetic preview
+![SC Voice-Cockpit on a tablet, just after Wingman heard "deploy the landing gear"](docs/cockpit.png)
 
-![Tablet cockpit with navigation](docs/tablet-nav.png)
+## What it looks like
 
-![Phone deck](docs/phone-deck.png)
+Say it or tap it. A voice command lights the matching tablet buttons and shows what Wingman
+heard; a tap presses the same keys through Wingman, which registers it and answers.
 
-![Not-set-up control](docs/tablet-not-set-up.png)
+<table>
+<tr>
+<td width="50%"><img src="docs/nav.png" alt="NAV desk with a target, distance, direction bubble and route"></td>
+<td width="50%"><img src="docs/waypoints.png" alt="Waypoint list with a body filter and the active target"></td>
+</tr>
+<tr>
+<td><b>NAV desk.</b> Target, distance, direction bubble and route, right beside your controls.</td>
+<td><b>Waypoints.</b> Your own saved spots: filter by body, set a target, rename, add notes or delete.</td>
+</tr>
+<tr>
+<td><img src="docs/phone-nav.png" alt="Phone layout with the deck and the NAV desk"></td>
+<td><img src="docs/theme-origin.png" alt="The light Origin theme on the tablet"></td>
+</tr>
+<tr>
+<td><b>Phone layout.</b> The same deck and lights, sized for a phone held sideways.</td>
+<td><b>Twelve manufacturer themes.</b> Origin shown here; RSI is the default.</td>
+</tr>
+<tr>
+<td><img src="docs/settings-fix-a-light.png" alt="Deck settings with display options and Fix a light"></td>
+<td><img src="docs/ring.png" alt="The in-game direction ring in three states"></td>
+</tr>
+<tr>
+<td><b>Deck settings.</b> Night mode, large text and high contrast, plus <b>Fix a light</b>, which corrects a tablet light without pressing a key.</td>
+<td><b>In-game ring.</b> While you navigate, a direction ring hangs at the top of the game screen (borderless windowed). Drawn here by the skill's own ring renderer.</td>
+</tr>
+</table>
 
-All locations and controls shown here are synthetic test data, not a live player profile.
-The [startup card text](docs/startup-card.png) is a synthetic preview, not a capture of the Wingman client.
+Every picture comes from the real deck running against a test server with invented waypoints;
+nothing is from a real player profile.
 
 ## Requirements
 
@@ -55,6 +81,10 @@ advanced migration helpers are in `tools/` in the source repository.
 still serve. Missing command/key controls show **Not set up** and a tap presses nothing.
 The startup card explains setup, after the same 15-second startup delay as pairing.
 Existing commands retain the normal key-lookup and drift-guard features and settings.
+
+![A deck control before setup: it shows Not set up and presses nothing](docs/not-set-up.png)
+
+The [startup card text](docs/startup-card.png) is a synthetic preview, not a capture of the Wingman client.
 
 To populate the deck, close Star Citizen and switch **Set up deck commands and keybinds**
 on in this skill's settings. Setup adds Wingman commands, appends silent light-sync actions
@@ -166,12 +196,14 @@ python tests/keybindings/static_check.py
 python tests/compatibility.py --reference /path/to/wingman-ai-3.2.11 --loader /path/to/wingman-ai-3.2.11/services/module_manager.py
 python tests/keybindings/compatibility.py --reference /path/to/wingman-ai-3.2.11 --loader /path/to/wingman-ai-3.2.11/services/module_manager.py
 python tests/fake_server.py --selftest --artifacts /tmp/cockpit-browser
+python tests/fake_server.py --showcase --artifacts docs
 python tools/build_release.py
 python tools/build_release.py --out /tmp/cockpit-rebuild
 ```
 
 The genuine API probes require the official Wingman source reference. The browser selftest
-requires Google Chrome. Optional game-extract/private-fixture tests skip when not configured;
+requires Google Chrome; the showcase run redraws the README pictures and loads
+the theme fonts from Google Fonts. Optional game-extract/private-fixture tests skip when not configured;
 portable tests and browser screenshots use synthetic data. The builder obtains the official
 OpenCV wheel over HTTPS, verifies PyPI's digest and the two embedded binary hashes, and caches
 it outside the repository. ZIP timestamps, permissions and member ordering are fixed; use the

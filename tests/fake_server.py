@@ -71,7 +71,7 @@ class ProbeServer(CockpitServer):
                 self.notify_update()
             if data.get("fresh"):
                 self.set_position({"x":100., "y":0., "z":295000., "body":"Daymar",
-                    "active_frame":"planet", "frame_id":"daymar", "camdir":[0,0,0],
+                    "active_frame":"planet", "frame_id":"daymar", "camdir":data.get("camdir",[0,0,0]),
                     "planet_rotation":{"frame_id":"daymar", "angle":0., "valid":True},
                     "captured_at":time.time()})
             if data.get("stale"):
@@ -84,7 +84,7 @@ class Keyboard:
     def release(self,k):pass
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument("--port",type=int,default=0);ap.add_argument("--selftest",action="store_true");ap.add_argument("--nav-selftest",action="store_true");ap.add_argument("--artifacts",type=Path);args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument("--port",type=int,default=0);ap.add_argument("--selftest",action="store_true");ap.add_argument("--nav-selftest",action="store_true");ap.add_argument("--showcase",action="store_true");ap.add_argument("--artifacts",type=Path);args=ap.parse_args()
     from sample_index import synthetic_index
     raw=synthetic_index()
     from sc_voice_cockpit.deck_pack.planner import MACROS
@@ -122,9 +122,16 @@ def main():
         folder=Path(temp);db=NavPointDatabase(str(folder))
         server=ProbeServer(db,deck,folder,port=args.port,share_on_lan=False)
         server.events=events;server.invocations=invocations;server.speech=speech
-        db.add_navpoint("Survey Alpha", "synthetic", "Daymar", 1100, 0, 295000, notes="Synthetic survey site")
-        db.add_navpoint("Survey Beta", "synthetic", "Daymar", 2100, 0, 295000)
-        db.add_navpoint("Far Survey", "synthetic", "Hurston", 3100, 0, 295000)
+        if args.showcase:
+            # README showcase: invented, believable player waypoints (no real player data).
+            db.add_navpoint("Hidden Cave Entrance", "synthetic", "Daymar", 1100, 0, 295000, notes="Bring a flashlight")
+            db.add_navpoint("Crashed Cutter", "synthetic", "Daymar", 2600, 400, 295000)
+            db.add_navpoint("Mining Spot: Quantanium", "synthetic", "Daymar", -1800, 900, 295000)
+            db.add_navpoint("Quiet Landing Pad", "synthetic", "Hurston", 3100, 0, 295000)
+        else:
+            db.add_navpoint("Survey Alpha", "synthetic", "Daymar", 1100, 0, 295000, notes="Synthetic survey site")
+            db.add_navpoint("Survey Beta", "synthetic", "Daymar", 2100, 0, 295000)
+            db.add_navpoint("Far Survey", "synthetic", "Hurston", 3100, 0, 295000)
         async def nav(action):
             if action == "clear_target": server.set_active_target(None)
             elif action == "mark_location":
@@ -137,7 +144,11 @@ def main():
         assert server.start()
         base=server.url
         try:
-            if args.selftest or args.nav_selftest:
+            if args.showcase:
+                sys.path.insert(0,str(ROOT/"tests/e2e"))
+                from showcase_e2e import run as run_showcase
+                run_showcase(base,token,args.artifacts)
+            elif args.selftest or args.nav_selftest:
                 sys.path.insert(0,str(ROOT/"tests/e2e"))
                 from run_e2e import run
                 if args.selftest: run(base,token,args.artifacts)
