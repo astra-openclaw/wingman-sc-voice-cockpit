@@ -1,6 +1,6 @@
 # Notices and attribution
 
-SC Voice-Cockpit 1.2.0 by Dominicus. The combined work is GPL-3.0;
+SC Voice-Cockpit 1.2.1 by Dominicus. The combined work is GPL-3.0;
 see LICENSE. The permissive components retain the full notices below.
 
 ## NavPoint modification notice (GPL-3.0 section 5)

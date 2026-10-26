@@ -56,7 +56,7 @@ nothing is from a real player profile.
 
 ## Install or update
 
-1. Download `SC-Voice-Cockpit-1.2.0.zip` from
+1. Download `SC-Voice-Cockpit-1.2.1.zip` from
    [Releases](https://github.com/astra-openclaw/wingman-sc-voice-cockpit/releases).
 2. Close Wingman. Extract into `%APPDATA%\ShipBit\WingmanAI\custom_skills`.
    The result must be `custom_skills\sc_voice_cockpit\main.py`, without another wrapper.
@@ -142,6 +142,7 @@ Wingman microphone**, not the tablet microphone.
 | `deck_enabled` | on | Enable tablet control; navigation remains available |
 | `deck_port` | 7869 | Local web listener; avoid conflicts with old NavPoint |
 | `deck_feedback` | ai | `off`, `note`, `speak` or short tool-free AI feedback |
+| `deck_show_in_hud` | on | Show spoken tablet/emote reactions in Wingman’s HUD chat; applies live and respects the HUD switches |
 | `deck_tablet_mic` | on | Hold to talk using the PC microphone |
 | `deck_emotes` | on | Show emote controls; off hides them, not existing commands |
 | `game_folder` | auto | Installed LIVE folder, or an explicit PTU/EPTU folder |

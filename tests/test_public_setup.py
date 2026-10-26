@@ -15,7 +15,7 @@ def test_preview_is_read_only_with_unavailable_commands_and_holds():
     unavailable=[b for b in plan['deck']['buttons'].values() if b.get('not_set_up')]
     assert {'command','hold'} <= {b['kind'] for b in unavailable}
     assert all(b['command']=='Pilot command' for b in plan['deck']['buttons'].values() if b.get('kind')=='command' and not b.get('not_set_up'))
-    assert plan['deck']['version']=='1.2.0'
+    assert plan['deck']['version']=='1.2.1'
 
 def test_unavailable_taps_holds_and_stale_queued_requests_press_nothing():
     deck=runtime();deck.clients['a']=None;sent=[];deck.send=lambda c,m:sent.append(m)

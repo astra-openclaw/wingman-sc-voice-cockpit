@@ -514,7 +514,7 @@ def plan_pack(index, profile_xml, custom_binds, commands, steps, settings):
             else:layout['pages']=[p for p in layout['pages'] if p['buttons']]
     groups=sorted({e['group'] for m in cmdmeta.values() for e in m['effects']})
     return {'binds_to_replace':replacements,'binds_to_add':binds,'commands_to_add':added,'commands_to_update':updates,
-            'manifest_entries':entries,'deck':{'version':'1.2.0','buttons':buttons,
+            'manifest_entries':entries,'deck':{'version':'1.2.1','buttons':buttons,
             'commands':dict(sorted(cmdmeta.items())),'groups':groups,
             'layouts':{'tablet':layouts['hud.json'],'phone':layouts['hud-phone.json'], 'files':layouts},
             'decisions':decisions},'warnings':sorted(set(warnings))}

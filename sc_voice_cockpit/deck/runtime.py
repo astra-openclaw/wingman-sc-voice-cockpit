@@ -8,6 +8,7 @@ import time
 from collections import deque
 
 TABLET_COMMAND = contextvars.ContextVar("sc_voice_cockpit_tablet_command", default=False)
+DECK_SPEECH = contextvars.ContextVar("sc_voice_cockpit_deck_speech", default=False)
 MODIFIERS = frozenset({"alt", "alt gr", "ctrl", "right ctrl", "shift", "right shift"})
 
 class DeckRuntime:
@@ -29,6 +30,7 @@ class DeckRuntime:
         self.notes = deque(maxlen=100)
         self.last_utterance = None
         self.emote_reminded = False
+        self._hud_warning_at = float("-inf")
         self.jobs = queue.Queue(maxsize=128)
         self.stop_event = threading.Event()
         self.thread = None
@@ -107,6 +109,33 @@ class DeckRuntime:
         try:return checker(command,meta["emote"]) if checker else not meta.get("no_key",True)
         except Exception:return False
 
+    async def show_on_hud(self, line):
+        """Best-effort public HUD post; failures must never prevent speech."""
+        try:
+            if not line or not line.strip() or "{SKIP-TTS}" in line:
+                return False
+            if not self.skill.deck_setting("deck_show_in_hud", True):
+                return False
+            wingman = self.skill.wingman
+            hud = getattr(wingman, "hud", None)
+            if hud is None or not hud.chat_enabled:
+                return False
+            return await hud.show_message(wingman.name, line, duration=15)
+        except Exception as exc:
+            # Command, feedback and voice tasks can run on different threads.
+            # Keep the rate limit shared, but never hold a lock across an await.
+            try:
+                with self.lock:
+                    now = time.monotonic()
+                    warn = now - self._hud_warning_at >= 60
+                    if warn:
+                        self._hud_warning_at = now
+                if warn:
+                    self.skill.log.warning("Tablet HUD unavailable: " + type(exc).__name__, server_only=True)
+            except Exception:
+                pass
+            return False
+
     async def emote_feedback(self, command, bound):
         meta=self.manifest.get("commands",{}).get(command,{})
         label=meta.get("label","That")
@@ -117,7 +146,11 @@ class DeckRuntime:
                 self.emote_reminded=True
         # Deterministic factual feedback, never AI-generated success claims.
         self.skill._arm(line)
-        spoken=await self.skill.wingman.tts.speak(line,interrupt=False)
+        token = DECK_SPEECH.set(True)
+        try:
+            spoken=await self.skill.wingman.tts.speak(line,interrupt=False)
+        finally:
+            DECK_SPEECH.reset(token)
         if spoken is not False:await self.skill.wingman.conversation.show(line)
         self.add_note("Tablet/voice emote feedback: "+line)
         return line
@@ -395,7 +428,11 @@ class Feedback:
         try:
             # Share the existing per-wingman filler guard.
             self.deck.skill._arm(line)
-            spoken=await wingman.tts.speak(line,interrupt=False)
+            token = DECK_SPEECH.set(True)
+            try:
+                spoken=await wingman.tts.speak(line,interrupt=False)
+            finally:
+                DECK_SPEECH.reset(token)
             if spoken is False:return
             await wingman.conversation.show(line)
             self.deck.add_note("Tablet feedback: "+line)

@@ -3,6 +3,7 @@ import argparse
 import ast
 import asyncio
 import importlib.util
+import inspect
 import json
 from pathlib import Path
 import shutil
@@ -76,6 +77,33 @@ def main():
         assert "Planetary coordinates take priority" in prompt
         setup_prop=next(p for p in config.custom_properties if p.id=="deck_setup")
         assert setup_prop.value is False and "Star Citizen must be closed" in setup_prop.hint
+        hud_prop=next(p for p in config.custom_properties if p.id=="deck_show_in_hud")
+        assert hud_prop.value is True and hud_prop.name=="Show tablet reactions in the HUD"
+        assert hud_prop.hint=="Also show what the Wingman says about tablet taps and emotes in the HUD overlay, if the HUD is switched on in Wingman's settings."
+        ids=[p.id for p in config.custom_properties]
+        assert ids.index("deck_show_in_hud")==ids.index("deck_feedback")+1
+        assert obj.VERSION==config.version=="1.2.1"
+        # Public contracts used by the HUD helper and speech hook, genuine 3.2.11.
+        hud_signature=inspect.signature(facade.SkillHud.show_message)
+        hud_signature.bind(None,"Pilot","Line",duration=15)
+        assert inspect.iscoroutinefunction(facade.SkillHud.show_message)
+        assert hud_signature.parameters["duration"].kind==inspect.Parameter.KEYWORD_ONLY
+        assert isinstance(facade.SkillHud.chat_enabled,property)
+        assert tuple(inspect.signature(facade.SkillHud.chat_enabled.fget).parameters)==("self",)
+        assert inspect.iscoroutinefunction(base.Skill.on_play_to_user)
+        assert tuple(inspect.signature(base.Skill.on_play_to_user).parameters)==("self","text","sound_config")
+        # The genuine facade and Core await this chain directly (no task/thread
+        # handoff), so a ContextVar set around speak reaches the skill hook.
+        tts_tree=ast.parse(inspect.getsource(facade.SkillTts).strip())
+        speak=next(n for n in ast.walk(tts_tree) if isinstance(n,ast.AsyncFunctionDef) and n.name=="speak")
+        assert any(isinstance(n,ast.Return) and isinstance(n.value,ast.Await)
+                   and isinstance(n.value.value,ast.Call) and isinstance(n.value.value.func,ast.Attribute)
+                   and n.value.value.func.attr=="play_to_user" for n in ast.walk(speak))
+        core_tree=ast.parse((args.reference/"wingmen/wingman.py").read_text(encoding="utf-8"))
+        play=next(n for n in ast.walk(core_tree) if isinstance(n,ast.AsyncFunctionDef) and n.name=="play_to_user")
+        assert any(isinstance(n,ast.Await) and isinstance(n.value,ast.Call)
+                   and isinstance(n.value.func,ast.Attribute) and n.value.func.attr=="on_play_to_user"
+                   for n in ast.walk(play))
         # Older override containing none of the new properties still uses defaults.
         obj.config=config.model_copy(update={"custom_properties":[]})
         assert asyncio.run(obj.validate())==[]
@@ -103,6 +131,36 @@ def main():
         obj._arm("Confirmed.")
         assert asyncio.run(obj.on_play_to_user("Confirmed.",None))=="Confirmed."
         assert asyncio.run(obj.on_play_to_user("Filler",None))=="{SKIP-TTS}"
+        # Real facade speak in the actual Feedback thread; record the hook's
+        # task/context and ordering, stubbing only Core's external playback.
+        from sc_voice_cockpit.deck.runtime import DECK_SPEECH, TABLET_COMMAND
+        hud_events=[];feedback_done=threading.Event()
+        hud_wing=types.SimpleNamespace(name="Pilot",audio=types.SimpleNamespace(is_playing=False),
+            conversation=types.SimpleNamespace(user_busy=False,show=AsyncMock(side_effect=lambda line:feedback_done.set())),
+            config=types.SimpleNamespace(prompts=types.SimpleNamespace(backstory="Pilot")),
+            commands=types.SimpleNamespace(get=lambda name:None),ai=types.SimpleNamespace(generate=AsyncMock(return_value="Confirmed.")))
+        hud_obj=module.SC_VoiceCockpit(config=config,settings=types.SimpleNamespace(),wingman=hud_wing)
+        hud_obj._deck=DeckRuntime(hud_obj)
+        async def hud_show(title,text,*,duration):
+            hud_events.append(("hud",title,text,duration));return True
+        hud_wing.hud=types.SimpleNamespace(chat_enabled=True,show_message=AsyncMock(side_effect=hud_show))
+        async def play_line(text,**kwargs):
+            assert DECK_SPEECH.get() and not TABLET_COMMAND.get()
+            assert asyncio.current_task() is hud_obj._deck.feedback.task
+            text=await hud_obj.on_play_to_user(text,kwargs.get("sound_config"))
+            hud_events.append(("speech",text));return True
+        hud_wing.tts=facade.SkillTts(types.SimpleNamespace(play_to_user=play_line))
+        try:
+            hud_obj._deck.feedback.start()
+            hud_obj._deck.feedback.submit({"label":"Gear"})
+            with hud_obj._deck.feedback.condition:
+                hud_obj._deck.feedback.due=0
+                hud_obj._deck.feedback.condition.notify()
+            assert feedback_done.wait(5),"Genuine TTS facade feedback did not finish"
+        finally:
+            hud_obj._deck.feedback.stop()
+        assert hud_events==[("hud","Pilot","Confirmed.",15),("speech","Confirmed.")]
+        assert not hud_obj._deck.feedback.thread.is_alive() and not DECK_SPEECH.get()
         messages=[];obj._deck.broadcast=messages.append
         status=MicStatusResponse(state="held",listening=False,recording=True,recording_wingman="Pilot",voice_activation_enabled=False,playing=False)
         asyncio.run(obj._deck_mic_status(status));assert messages[-1]["on"]
@@ -240,7 +298,7 @@ def main():
         with patch.object(command_executor.time,"sleep"):
             asyncio.run(keyrunner.execute_action(action_command))
         assert keycalls==[("direct",29,1),("press","w"),("release","w"),("direct",29,3)],keycalls
-        result={"live_ring_settings_without_other_side_effects":"PASS","light_tool_schema_and_behavior":"PASS","genuine_loader":"PASS","catalog":"ok","api_version":3,"tool_count":len(obj._decorated_tools),
+        result={"hud_public_signatures_and_same_task_tts_context":"PASS", "live_ring_settings_without_other_side_effects":"PASS","light_tool_schema_and_behavior":"PASS","genuine_loader":"PASS","catalog":"ok","api_version":3,"tool_count":len(obj._decorated_tools),
                 "command_actions":sorted(obj._command_actions),"durable_pairing_cards_and_15s_delay":"PASS","merged_prompt_contract":"PASS","partial_override_defaults":"PASS",
                 "notes_at_next_turn_only":"PASS","deck_sync_silent_exception_safe":"PASS","mic_callback_schema":"PASS",
                 "filler_guard":"PASS","inert_catalog_import":"PASS","prepare_reload_unload":"PASS (real single listener; fake capture/Core effects)","ai_no_tools":"PASS (genuine facade; actual_llm_call tools defaults None)",

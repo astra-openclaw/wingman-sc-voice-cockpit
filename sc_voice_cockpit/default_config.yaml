@@ -3,7 +3,7 @@ name: SC_VoiceCockpit
 api_version: 3
 display_name: SC Voice-Cockpit
 author: Dominicus
-version: 1.2.0
+version: 1.2.1
 platforms:
 - windows
 auto_activate: true
@@ -99,6 +99,12 @@ custom_properties:
     value: speak
   - label: ai
     value: ai
+- id: deck_show_in_hud
+  name: Show tablet reactions in the HUD
+  hint: Also show what the Wingman says about tablet taps and emotes in the HUD overlay, if the HUD is switched on in Wingman's settings.
+  property_type: boolean
+  value: true
+  required: false
 - id: deck_tablet_mic
   name: Deck Tablet Mic
   property_type: boolean

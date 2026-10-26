@@ -19,9 +19,11 @@ if "sc_voice_cockpit" not in sys.modules:
 from skills.skill_base import Skill, command_action, tool
 from sc_voice_cockpit.keybindings.main import SC_Keybindings
 from sc_voice_cockpit.navpoint.main import SC_NavPoint
-from sc_voice_cockpit.deck.runtime import DeckRuntime
+from sc_voice_cockpit.deck.runtime import DeckRuntime, TABLET_COMMAND, DECK_SPEECH
 
 class SC_VoiceCockpit(SC_Keybindings, SC_NavPoint):
+    VERSION = "1.2.1"
+
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         self._deck=None
@@ -36,7 +38,7 @@ class SC_VoiceCockpit(SC_Keybindings, SC_NavPoint):
         defaults={"game_folder":"auto","endearments":"","auto_update_commands":True,
             "restore_custom_binds":False,"fresh_start":False,"display":1,
             "arrival_alert_distance":1000,"arrival_stop_distance":250,"overlay_size":220,
-            "deck_setup":False,"deck_enabled":True,"deck_port":7869,"deck_feedback":"ai","deck_tablet_mic":True,"deck_emotes":True}
+            "deck_setup":False,"deck_enabled":True,"deck_port":7869,"deck_feedback":"ai","deck_show_in_hud":True,"deck_tablet_mic":True,"deck_emotes":True}
         if name in defaults and not any(p.id==name for p in (getattr(self.config,"custom_properties",None) or [])):
             return defaults[name]
         return super().retrieve_custom_property_value(name,errors if errors is not None else [])
@@ -47,6 +49,12 @@ class SC_VoiceCockpit(SC_Keybindings, SC_NavPoint):
             prop=next((p for p in props if p.id==name),None)
             return prop.value if prop is not None and prop.value is not None else default
         except (AttributeError,KeyError,ValueError):return default
+
+    async def on_play_to_user(self, text, sound_config):
+        text = await super().on_play_to_user(text, sound_config)
+        if self._deck is not None and (TABLET_COMMAND.get() or DECK_SPEECH.get()):
+            await self._deck.show_on_hud(text)
+        return text
 
     def deck_setup_enabled(self):
         """One-time legacy migration, then durable choices through update_config.

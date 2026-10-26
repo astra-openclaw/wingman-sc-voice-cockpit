@@ -1,3 +1,9 @@
+# 1.2.1 — 2026-10-26
+
+- Show spoken tablet reactions and emote feedback once in Wingman's HUD chat at the speech hook.
+- Add the live Show tablet reactions in the HUD setting, on by default; respect Wingman's HUD switches.
+- Keep ordinary voice replies, silent taps, feedback modes, client chat and conversation notes unchanged.
+
 # 1.2.0 — 2026-10-26
 
 - First public GPL-3.0 release, generic player-facing text and full attribution.
