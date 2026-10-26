@@ -1,0 +1,72 @@
+/* Layout editor (editor.html): a toolbar, the deck preview and a properties panel. The
+   preview itself uses the deck's own styles; these only style the editor around it. */
+body.editor {
+  display: flex; flex-direction: column; height: 100vh; overflow: hidden;
+  font: 14px/1.4 "Segoe UI", system-ui, sans-serif; color: #e8eef5;
+}
+.ed-bar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 10px 14px;
+  background: #0b1726; border-bottom: 1px solid #23415f;
+}
+.ed-title { margin-right: 6px; letter-spacing: .08em; text-transform: uppercase; color: #4fb3ff; }
+.ed-sep { width: 1px; height: 24px; background: #23415f; margin: 0 4px; }
+.ed-grow { flex: 1; }
+.ed-save, .ed-check { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.ed-bar button, .ed-side button {
+  background: #12253b; color: #e8eef5; border: 1px solid #4fb3ff; border-radius: 6px;
+  padding: 6px 12px; font: inherit; cursor: pointer;
+}
+.ed-bar button:disabled, .ed-side button:disabled { opacity: .4; cursor: default; }
+.ed-bar button.primary { background: #4fb3ff; color: #04121f; font-weight: 600; }
+.ed-bar select, .ed-bar input:not([type]), .ed-side input:not([type="checkbox"]), .ed-side select, .ed-side textarea {
+  background: #12253b; color: #e8eef5; border: 1px solid #2e4f72; border-radius: 6px; padding: 5px 8px; font: inherit;
+}
+.ed-bar select { max-width: 320px; }
+.ed-body { flex: 1; display: flex; min-height: 0; }
+.ed-main { flex: 1; position: relative; overflow: hidden; }
+/* The deck sizes itself to #stage; the editor gives it the layout's exact shape. */
+.ed-main #stage { position: absolute; inset: auto; }
+.ed-side {
+  width: 340px; flex: none; overflow-y: auto; padding: 14px 16px 24px;
+  background: #0b1726; border-left: 1px solid #23415f;
+}
+.ed-side h2 { margin: 0 0 4px; font-size: 16px; color: #4fb3ff; }
+.ed-side .id { color: #8aa0b8; font-size: 12px; margin-bottom: 12px; }
+.ed-side label.f { display: block; margin: 12px 0 4px; font-weight: 600; }
+.ed-side input:not([type="checkbox"]), .ed-side select, .ed-side textarea { width: 100%; box-sizing: border-box; }
+.ed-side textarea { min-height: 70px; resize: vertical; }
+.ed-side .hint { color: #8aa0b8; font-size: 12px; margin-top: 4px; }
+.ed-side .warn { color: #ffb347; font-size: 12px; margin-top: 4px; }
+.ed-side .row { display: flex; gap: 8px; align-items: center; }
+.ed-side .row > * { flex: 1; }
+.ed-side .check { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+.ed-side .help p { color: #b8c6d6; margin: 0 0 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+.chips span {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 4px 3px 10px;
+  border: 1px solid #4fb3ff; border-radius: 999px; font-family: Consolas, monospace;
+}
+.chips span button { padding: 0 7px; border: 0; background: none; color: #8aa0b8; }
+.chips.locked span { border-color: #2e4f72; color: #8aa0b8; padding-right: 10px; }
+.icon-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-top: 6px; }
+.icon-grid[hidden] { display: none; }
+.icon-grid button { padding: 6px; display: flex; align-items: center; justify-content: center; }
+.icon-grid button.on { background: #4fb3ff; color: #04121f; }
+.icon-grid svg, .icon-pick svg { width: 26px; height: 26px; stroke-width: 2.6; }
+.icon-pick { display: flex; align-items: center; gap: 8px; }
+
+/* Selection box, drawn inside the deck canvas so it scales with it. */
+#edSel { position: absolute; z-index: 50; pointer-events: none; outline: 2px solid #ffbe55; outline-offset: 2px; }
+#edSel .handle {
+  position: absolute; right: -9px; bottom: -9px; width: 14px; height: 14px; border-radius: 3px;
+  background: #ffbe55; pointer-events: auto; cursor: nwse-resize;
+}
+.editor .hud-btn { cursor: pointer; }
+
+#edStatus {
+  position: fixed; left: 50%; bottom: 16px; transform: translate(-50%, 20px); opacity: 0;
+  max-width: 70vw; padding: 10px 16px; border-radius: 8px; background: #12253b; border: 1px solid #4fb3ff;
+  transition: opacity .2s, transform .2s; pointer-events: none; z-index: 100;
+}
+#edStatus.show { opacity: 1; transform: translate(-50%, 0); }
+#edStatus.bad { border-color: #ff6b6b; }

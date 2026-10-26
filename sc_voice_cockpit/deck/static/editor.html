@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="rsi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tablet Deck layout editor</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<!-- The deck's own fonts and styles, so the preview looks exactly like the tablet. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Chakra+Petch:wght@500;600;700&family=Cinzel:wght@500;700&family=Comfortaa:wght@500;700&family=Exo+2:wght@400;500;600;700&family=Marcellus&family=Montserrat:wght@500;600;700&family=Oxanium:wght@500;600;700&family=Rajdhani:wght@600;700&family=Saira+Condensed:wght@600;700&family=Saira+Stencil+One&display=swap">
+<link rel="stylesheet" href="themes.css">
+<link rel="stylesheet" href="deck.css">
+<link rel="stylesheet" href="hud.css">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="editor.css">
+</head>
+<body class="editor">
+<div class="ed-bar">
+  <strong class="ed-title">Layout editor</strong>
+  <select id="layoutSelect" aria-label="Layout to edit"></select>
+  <button id="importBtn" type="button" title="Open a layout file someone shared, to look at it and save it as yours">Import…</button>
+  <button id="exportBtn" type="button" title="Save this layout as a file to share">Export</button>
+  <input id="importFile" type="file" accept=".json,application/json" hidden>
+  <span class="ed-sep"></span>
+  <button id="addBtn" type="button" title="Add a button to the panel you're looking at">Add button</button>
+  <button id="dupBtn" type="button" title="Copy the selected button (Ctrl+D)">Duplicate</button>
+  <button id="delBtn" type="button" title="Delete the selected button (Delete)">Delete</button>
+  <button id="undoBtn" type="button" title="Undo (Ctrl+Z)">Undo</button>
+  <button id="redoBtn" type="button" title="Redo (Ctrl+Y)">Redo</button>
+  <span class="ed-grow"></span>
+  <label class="ed-save">Save as <input id="saveName" maxlength="40" spellcheck="false" autocomplete="off"></label>
+  <label class="ed-check"><input id="useIt" type="checkbox" checked> <span id="useLabel">Use on tablets</span></label>
+  <button id="saveBtn" class="primary" type="button">Save</button>
+</div>
+<div class="ed-body">
+  <div class="ed-main" id="pane"><div id="stage"><div id="canvas"></div></div></div>
+  <aside class="ed-side" id="props"></aside>
+</div>
+<div id="edStatus" role="status" aria-live="polite"></div>
+
+<script src="icons.js"></script>
+<script src="fx.js"></script>
+<script src="canvas.js"></script>
+<script src="editor.js"></script>
+</body>
+</html>

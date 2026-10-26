@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tablet Deck Showcase</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="showcase.css">
+</head>
+<body>
+<!-- Sandbox for showing the deck on a simulated iPhone or iPad, with a live log of the keys
+     the PC would press. Run the server with --dry-run and open /showcase.html?t=<code>. -->
+<header class="bar">
+  <div class="brand"><img src="icon.svg" alt=""><b>Tablet Deck</b><span>Showcase</span></div>
+  <div class="seg" role="group" aria-label="Device">
+    <button type="button" data-device="phone" aria-pressed="true">iPhone</button>
+    <button type="button" data-device="tablet" aria-pressed="false">iPad</button>
+  </div>
+  <button type="button" id="reload" class="ghost">Reload deck</button>
+  <span id="mode" class="pill">Connecting…</span>
+</header>
+<div id="warn" class="warn" role="alert" hidden></div>
+
+<main class="layout">
+  <section class="stage" id="stage">
+    <div class="device" id="device">
+      <div class="screen"><iframe id="deck" title="Tablet Deck"></iframe></div>
+      <i class="island"></i><i class="home"></i><i class="cam"></i>
+      <i class="side power"></i><i class="side vol-up"></i><i class="side vol-down"></i><i class="side action"></i>
+    </div>
+    <form id="pair" class="pair" hidden>
+      <label for="code">Pairing code</label>
+      <input id="code" autocomplete="off" spellcheck="false" maxlength="32">
+      <button type="submit">Open deck</button>
+      <p>It's shown in the Tablet Deck window on the PC (or in config.json).</p>
+    </form>
+    <div class="caption" id="caption"></div>
+  </section>
+
+  <aside class="log" aria-label="Keys sent">
+    <div class="log-head">
+      <b>Keys sent</b><span id="count" class="count"></span>
+      <button type="button" id="clear" class="ghost small">Clear</button>
+    </div>
+    <p class="empty" id="empty">Tap a button on the deck to see what the PC would press.</p>
+    <ol id="entries"></ol>
+  </aside>
+</main>
+
+<script src="showcase.js"></script>
+</body>
+</html>

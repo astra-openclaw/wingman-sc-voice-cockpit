@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SC NavPoint · Navigation desk</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="SC NavPoint home"><span class="brandmark">SC</span><span>NAVPOINT<small>Your navigation desk</small></span></a>
+    <nav aria-label="Dashboard sections">
+      <a href="#waypoints"><span class="nav-number">01</span>Waypoints</a>
+      <a href="#navigation"><span class="nav-number">02</span>Navigation</a>
+    </nav>
+    <div class="sidebar-foot">Saved locations<small>Local to this Wingman profile</small></div>
+  </aside>
+  <div class="workspace">
+  <header>
+    <div class="header-title">
+      <span class="eyebrow">PERSONAL NAVIGATION</span>
+      <h1>Navigation desk</h1>
+    </div>
+    <div class="header-meta" id="status-bar" role="status">Ready</div>
+  </header>
+
+  <main>
+    <!-- Left panel: Waypoint list -->
+    <section class="panel panel-waypoints" id="waypoints" aria-labelledby="waypoints-title">
+      <div class="panel-header">
+        <h2 id="waypoints-title">Waypoints</h2>
+        <div class="filter-row">
+          <select id="body-filter" aria-label="Filter waypoints by body">
+            <option value="">All Bodies</option>
+          </select>
+          <button class="btn-icon" onclick="refreshWaypoints()" title="Refresh waypoints" aria-label="Refresh waypoints">↺</button>
+        </div>
+      </div>
+      <div id="waypoint-list" class="waypoint-list">
+        <div class="empty-state">No waypoints saved yet.<br>Say "mark location" in game to save one.</div>
+      </div>
+    </section>
+
+    <!-- Right panel: Navigation -->
+    <section class="panel panel-nav" id="navigation" aria-labelledby="navigation-title">
+      <div class="panel-header">
+        <h2 id="navigation-title">Navigation</h2>
+        <button class="btn-sm" id="clear-target-btn" onclick="clearTarget()" style="display:none">✕ Clear</button>
+      </div>
+
+      <!-- Active target info -->
+      <div id="target-card" class="target-card hidden">
+        <div class="target-name" id="target-name">—</div>
+        <div class="target-meta" id="target-meta"></div>
+      </div>
+      <div id="no-target-msg" class="no-target-msg">
+        Select a waypoint or say<br>"navigate to [name]"
+      </div>
+
+      <!-- Compass rose -->
+      <div class="compass-wrap" id="compass-wrap">
+        <canvas id="compass" width="220" height="220" role="img" aria-label="Direction indicator; distance and direction are shown below"></canvas>
+        <div class="compass-labels">
+          <span class="compass-label-n">▲ FWD</span>
+        </div>
+      </div>
+
+      <!-- Nav data -->
+      <div class="nav-data" id="nav-data">
+        <div class="nav-row">
+          <span class="nav-label">Distance</span>
+          <span class="nav-value" id="nav-distance">—</span>
+        </div>
+        <div class="nav-row">
+          <span class="nav-label">Direction</span>
+          <span class="nav-value" id="nav-turn">—</span>
+        </div>
+        <div class="nav-row">
+          <span class="nav-label">Elevation</span>
+          <span class="nav-value" id="nav-elev">—</span>
+        </div>
+        <div class="nav-row">
+          <span class="nav-label">Bearing</span>
+          <span class="nav-value" id="nav-bearing">—</span>
+        </div>
+      </div>
+
+      <!-- Step-by-step guidance -->
+      <div class="guidance-box" id="guidance-box">
+        <div class="guidance-title">Route</div>
+        <ol id="guidance-steps" class="guidance-steps"></ol>
+      </div>
+
+      <!-- Position info -->
+      <div class="position-box" id="position-box">
+        <div class="guidance-title">Current Position</div>
+        <div class="pos-grid" id="pos-grid">—</div>
+      </div>
+    </section>
+  </main>
+  <footer>Saved waypoints and guidance from your latest position reading.</footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

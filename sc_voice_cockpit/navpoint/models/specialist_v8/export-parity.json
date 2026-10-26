@@ -1,0 +1,43 @@
+{
+  "records": [
+    {
+      "sample": "random-width-320",
+      "width": 320,
+      "shape": [
+        1,
+        40,
+        96
+      ],
+      "maximum_absolute_error": 2.384185791015625e-07,
+      "allclose": true,
+      "argmax_equal": true
+    },
+    {
+      "sample": "random-width-2462",
+      "width": 2462,
+      "shape": [
+        1,
+        308,
+        96
+      ],
+      "maximum_absolute_error": 2.384185791015625e-07,
+      "allclose": true,
+      "argmax_equal": true
+    },
+    {
+      "sample": "random-width-2492",
+      "width": 2492,
+      "shape": [
+        1,
+        311,
+        96
+      ],
+      "maximum_absolute_error": 2.384185791015625e-07,
+      "allclose": true,
+      "argmax_equal": true
+    }
+  ],
+  "model_sha256": "0c775c270fda57437b34af99a1e0e8609a4e86dcbd3265201fde061b5aac0a39",
+  "passed": true,
+  "note": "Random tensors and synthetic validation rows check runtime/export consistency, not real-game accuracy."
+}

@@ -1,0 +1,52 @@
+module: skills.sc_keybindings.main
+name: SC_Keybindings
+api_version: 3
+display_name: Star Citizen Keybindings
+author: Dominicus
+version: '1.4.2'
+platforms: [windows]
+auto_activate: true
+discoverable_by_default: false
+description:
+  en: Look up your real Star Citizen keys and their actions. Never presses keys.
+prompt: >-
+  For every Star Citizen key question, including repeats and follow-ups, call look_up_keybinding with the user's own words.
+  It speaks the verified answer itself.
+  Never invent a binding.
+hint:
+  en: Ask about keyboard or mouse controls from your own Star Citizen installation.
+examples:
+  - en: Which key is the quantum drive?
+  - en: What does Right Alt K do?
+  - en: Which key locks the doors?
+custom_properties:
+  - id: game_folder
+    name: Star Citizen LIVE folder
+    property_type: string
+    value: auto
+    required: true
+    hint: Auto-detect, or enter the full StarCitizen\LIVE directory.
+  - id: endearments
+    name: Endearments in rotation
+    property_type: string
+    value: ""
+    required: false
+    hint: Comma-separated; empty items mean none. Empty disables endearments.
+  - id: auto_update_commands
+    name: Update moved command keys
+    property_type: boolean
+    value: true
+    required: false
+    hint: Repair verified voice-command steps when your controls change.
+  - id: restore_custom_binds
+    name: Restore listed custom keys
+    property_type: boolean
+    value: false
+    required: false
+    hint: Restore custom_binds.json entries only while Star Citizen is closed.
+  - id: fresh_start
+    name: "Fresh start: re-import everything"
+    property_type: boolean
+    value: false
+    required: false
+    hint: Switch on to re-import all keybindings as on a fresh install. Runs once; switch off again to re-arm.

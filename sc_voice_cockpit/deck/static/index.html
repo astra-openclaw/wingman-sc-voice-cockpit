@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-theme="rsi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#05090f">
+<title>Tablet Deck</title>
+<!-- No start_url in the manifest: the home screen app opens the address it was added from,
+     including the pairing code, so it doesn't ask for the code again. -->
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-title" content="Tablet Deck">
+<!-- Theme fonts. Without internet access the tablet falls back to system fonts. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Chakra+Petch:wght@500;600;700&family=Cinzel:wght@500;700&family=Comfortaa:wght@500;700&family=Exo+2:wght@400;500;600;700&family=Marcellus&family=Montserrat:wght@500;600;700&family=Oxanium:wght@500;600;700&family=Rajdhani:wght@600;700&family=Saira+Condensed:wght@600;700&family=Saira+Stencil+One&display=swap">
+<link rel="stylesheet" href="themes.css">
+<link rel="stylesheet" href="deck.css">
+<link rel="stylesheet" href="hud.css">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="intro.css">
+<link rel="stylesheet" href="navdesk.css">
+</head>
+<body class="offline">
+<button type="button" id="nav-deck-link" aria-label="Open NAV panel">NAV · <span id="nav-status"></span></button>
+
+<header>
+  <div class="brand"><span id="brandMark"></span><h1 id="title">Tablet Deck</h1></div>
+  <div id="status"><span id="dot"></span><span id="statusText">Connecting…</span></div>
+  <button id="talk" class="hbtn js-talk" type="button">Hold to talk</button>
+  <button id="voiceHelpBtn" class="hbtn js-voice" type="button" aria-label="Voice commands list">?</button>
+  <button id="themeBtn" class="hbtn" type="button" aria-label="Deck settings"><span id="settingsIco"></span>Settings</button>
+  <button id="fs" class="hbtn" type="button">Fullscreen</button>
+</header>
+<nav id="tabs"></nav>
+<main id="grid"><div id="msg">Loading layout…</div></main>
+
+<div id="stage" hidden><div id="canvas"></div></div>
+
+<div id="intro" role="button" tabindex="0" aria-label="Tap to continue">
+  <canvas id="introStars"></canvas>
+  <div class="intro-corners"><i></i><i></i><i></i><i></i></div>
+  <div class="intro-core">
+    <div class="intro-rings"><i></i><i></i><i></i></div>
+    <div class="intro-emblem js-emblem"></div>
+  </div>
+  <h1 class="intro-title">Tablet<span>Deck</span></h1>
+  <div class="intro-sub">Star Citizen control deck</div>
+  <div class="intro-boot">
+    <div><span>› HUD systems</span><b>ONLINE</b></div>
+    <div><span>› PC uplink</span><span class="js-status">Connecting…</span></div>
+    <div><span>› Hull profile</span><span class="js-intro-maker"></span></div>
+  </div>
+  <div class="intro-tap">Tap to continue</div>
+  <div class="intro-flash"></div>
+</div>
+
+<div id="night" aria-hidden="true"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<div id="picker" role="dialog" aria-modal="true" aria-labelledby="pickerTitle">
+  <div class="bar"><span id="pickerTitle">Deck settings</span>
+    <div class="bar-btns"><button id="closePicker" type="button">Close</button></div></div>
+  <div class="sheet-body">
+    <div class="sheet-top">
+      <section class="sheet-section">
+        <h3><b>//</b> Layout</h3>
+        <select id="layoutPick" aria-label="Layout"></select>
+        <p class="sheet-note">Each tablet and phone keeps its own choice.</p>
+        <h3 class="sheet-sub"><b>//</b> Language</h3>
+        <select id="langPick" aria-label="Language"></select>
+      </section>
+      <section class="sheet-section">
+        <h3><b>//</b> Display</h3>
+        <button id="nightBtn" class="sheet-switch" type="button" role="switch" aria-checked="false">
+          <span class="sw-text"><b>Night mode</b><span>Dims the deck for a dark room.</span></span><span class="sw-knob" aria-hidden="true"></span></button>
+        <button id="largeBtn" class="sheet-switch" type="button" role="switch" aria-checked="false">
+          <span class="sw-text"><b>Large text</b><span>Bigger, bolder labels, easier to read at a glance.</span></span><span class="sw-knob" aria-hidden="true"></span></button>
+        <button id="contrastBtn" class="sheet-switch" type="button" role="switch" aria-checked="false">
+          <span class="sw-text"><b>High contrast</b><span>Black and white with strong colours, over any theme.</span></span><span class="sw-knob" aria-hidden="true"></span></button>
+        <button id="swipeBtn" class="sheet-switch" type="button" role="switch" aria-checked="false">
+          <span class="sw-text"><b>Two-finger swipe</b><span>Swipe sideways over a half to flip its panels. Presses then wait a moment.</span></span><span class="sw-knob" aria-hidden="true"></span></button>
+        <button id="lightsBtn" class="sheet-switch" type="button" role="switch" aria-checked="true">
+          <span class="sw-text"><b>Button lights</b><span>Light buttons and show ON/OFF while something is on. They follow your taps, not the game.</span></span><span class="sw-knob" aria-hidden="true"></span></button>
+        <button id="resetStatesBtn" class="sheet-action" type="button">
+          <span class="sw-text"><b>Reset button lights</b><span>Turns all lit buttons off, e.g. after a respawn or when they don't match the game.</span></span></button>
+      </section>
+      <section id="fixLights" class="sheet-section">
+        <h3><b>//</b> Fix a light</h3>
+        <p class="sheet-note">Changes only the tablet light. Presses no key and does not change the ship.</p>
+        <div id="fixLightSwitches"></div>
+      </section>
+      <section id="pcLinks" class="sheet-section pc-links" hidden>
+        <h3><b>//</b> Open on PC</h3>
+        <div id="pcLinkBtns"></div>
+        <p class="sheet-note">Opens the site in your PC's browser.</p>
+      </section>
+    </div>
+    <section class="sheet-section">
+      <h3><b>//</b> Theme</h3>
+      <div id="cards" class="cards"></div>
+    </section>
+    <p class="sheet-foot">Ideas or problems? <a href="https://github.com/nodieCode/tablet-deck/issues/new/choose" target="_blank" rel="noopener">Feedback &amp; ideas on GitHub</a></p>
+  </div>
+</div>
+
+<div id="voiceHelp" role="dialog" aria-label="Voice commands">
+  <div class="bar"><span>Voice commands</span>
+    <div class="bar-btns"><button id="closeVoiceHelp" type="button">Close</button></div></div>
+  <p class="vh-intro">Hold the mic button and say one of these. Most Star Citizen controls are toggles, so "engines on" and "engines off" press the same key.</p>
+  <input id="voiceSearch" type="search" placeholder="Search, e.g. shields" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <div id="voiceList"></div>
+</div>
+
+<script src="icons.js"></script>
+<script src="i18n.js"></script>
+<script src="fx.js"></script>
+<script src="navdesk.js"></script>
+<script src="canvas.js"></script>
+<script src="app.js"></script>
+<script src="intro.js"></script>
+<script src="awake.js"></script>
+</body>
+</html>

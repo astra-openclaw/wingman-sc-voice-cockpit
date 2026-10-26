@@ -1,0 +1,14 @@
+pytest
+pytest-subtests
+pydantic
+PyYAML
+tiktoken
+fastapi
+uvicorn
+httpx
+websocket-client
+websockets
+pillow
+qrcode
+numpy
+packaging

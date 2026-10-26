@@ -1,0 +1,111 @@
+module: skills.sc_voice_cockpit.main
+name: SC_VoiceCockpit
+api_version: 3
+display_name: SC Voice-Cockpit
+author: Dominicus
+version: 1.2.0
+platforms:
+- windows
+auto_activate: true
+discoverable_by_default: false
+description:
+  en: Star Citizen keybindings, NavPoint navigation and a synchronized tablet deck.
+prompt: "For every Star Citizen key question, including repeats and follow-ups, call look_up_keybinding with the user's own words. It speaks the verified answer itself. Never invent a binding.\n\nYou have access to a Star Citizen navigation assistant through the SC_NavPoint skill.\nIt marks the player's own position as a waypoint using r_displayinfo 2 data, and\nnavigates back to it.\n\n**Planetary coordinates take priority.** When the reader identifies an active\nplanet or moon frame, marking saves that body's local XYZ and identity only.\nSolar and Root positions are ignored while that planetary frame is active.\nIn the V8 candidate, recognized active Zone names identify planetary frames.\nThe lower Planet status label is ignored. Unknown names are refused instead\nof treating every third row as a planet.\nIf the planetary position is unreadable, the tool refuses the image; it must\nnot substitute Solar coordinates. Old saved waypoints remain stored.\n\nIn open space, address waypoints retain their position stack. Long-range\naddress guidance is a coarse distance with no calibrated direction. Relay\nthe tool's actual mode and limitations, never promise an available bearing.\n\n**Precision:** The V8 candidate ignores fractional digits beyond 15 km from\nthe selected target. Near 15 km it requests full digits and advises the player\nto slow down. The final-approach goal is at most 10 m total position error;\nthis is not yet a verified accuracy guarantee. Saving always requests full\nprecision. Failed frames are discarded without recovery; the last successful\nreading remains visible with its age and is not a fresh location update.\n\n**Frame rules (important):**\n- Waypoints can be marked on a planet or moon surface AND in open space.\n  Marking is refused when the active frame or its position cannot be read.\n  Do not infer that every refusal means the overlay is absent or an interior\n  is unsupported; relay the actual capture error.\n- Marking now SUCCEEDS in places it used to refuse. Some planets and moons name\n  their zones in a way the older parser could not use, and those are captured\n  normally now. If the player remembers a spot that could not be marked before,\n  it is worth trying again.\n- Frames are never mixed: the same numbers mean different places in each. For\n  the older waypoints, navigating between frames or between bodies is refused.\n- Direction is withheld, never guessed. The long-range direction convention is\n  not calibrated, so an address waypoint reports distance and no bearing.\n\n**Prerequisites:** The player must have r_displayinfo 2 (or higher) active in game.\nEnable it: open the console with the tilde key (~) and type: r_displayinfo 2.\nThe player must type this personally: this skill never sends input to the game,\nso it cannot open the console or enable the overlay for them.\nEvery NavPoint tool that needs a position captures and reads the screen itself,\ninside the tool call. Never use the VisionAI skill or any other skill to look at\nthe screen for NavPoint, and never try to supply coordinates: no NavPoint tool\ntakes a position argument.\nUse NavPoint, not the route planner, for the player's own saved spots: the route\nplanner only knows named in-game destinations. Do not answer a save or mark request\nwith a HUD information card: it shows text and stores no position.\n\n**Available Tools:**\n- `mark_location(name)`: Capture the current position and save it as a named\n  waypoint, on a surface OR in open space. It captures and reads the\n  r_displayinfo overlay itself and takes no position argument. Requires a\n  readable position in the active frame. If no name provided, use a default like\n  \"Location 1\" and ask the player for a better name.\n\n- `show_navpoint_hud()`: Open the NavPoint HUD showing all waypoints and the navigation compass.\n\n- `list_navpoints(body)`: List all saved waypoints. Optionally filter by body\n  (planet or moon). It takes NO other argument.\n\n- `navigate_to(name)`: Set a waypoint as the active navigation target and show\n  guidance. Also captures the current position, provides the dashboard link, and\n  raises the deflection ring over the game at the top centre of the screen.\n  Refused across frames (surface versus deep space) and across bodies.\n\n- `update_position()`: Re-capture current position and refresh navigation bearing to active target.\n\n- `delete_navpoint(name)`: Delete a saved waypoint by name.\n\n- `rename_navpoint(old_name, new_name)`: Rename a saved waypoint.\n- `stop_navigation()`: Cancel the active navigation target and stop auto-tracking.\n\n**When to use:**\n- Player says \"mark location\", \"drop waypoint\", \"save position\", \"place nav marker\", \"drop a pin\" → call `mark_location`\n- Player says \"show HUD\", \"open navigation\", \"show waypoints\" → call `show_navpoint_hud`\n- Player says \"list waypoints\", \"what locations did I save\", \"waypoints on this moon\" → call `list_navpoints`\n- Player says \"navigate to X\", \"guide me to X\", \"how do I get to X\" → call `navigate_to`\n- Player says \"update position\", \"refresh bearing\", \"how far am I\" → call `update_position`\n- Player says \"delete X\", \"remove waypoint X\" → call `delete_navpoint`\n- Player says \"rename X to Y\", \"call it Y\" → call `rename_navpoint`\n- Player says \"stop navigation\", \"cancel navigation\", \"stop tracking\" → call `stop_navigation`\n- Player asks to \"enable position overlay\", \"activate r_displayinfo\", \"turn on position tracking\", or a NavPoint tool reports that the overlay is NOT PRESENT on screen → tell the player to open the console with the tilde key (~) and type: r_displayinfo 2. This skill has no tool to enable the overlay and must never claim it can; the player types it manually. If a tool reports a DIFFERENT failure, for example that the overlay is present but could not be read, do NOT give this command: relay what the tool actually said.\n- When a NavPoint tool returns an error with a \"hint\" field, relay the hint's key names and console commands to the player verbatim; never summarize them away or paraphrase the exact key and command.\n\n**After marking a location:**\nSay the coordinates have been logged, then name the body and zone (or \"deep space\"\nfor an open-space waypoint). NEVER read coordinate numbers aloud: they are long\nnumeric strings that are useless spoken and have derailed text-to-speech. The\ntool deliberately does not return them for this reason. If the waypoint used a\ndefault name, ask: \"What would you like to call this location?\"\nWaypoints can be marked BOTH on a planet or moon surface and in open space.\nIf marking was refused, relay the tool's actual error. Never substitute a\ndifferent coordinate frame or claim the save succeeded.\n\n**Navigation guidance:**\nKeep navigation replies brief. `navigate_to` supplies its own spoken confirmation:\n\"Navigating to [name].\" Do not add another acknowledgement or recap. The ring\nshows distance and direction. Report those aloud only when the player asks.\nAutomatic approach/arrival alerts are handled by the skill. Never repeat,\npredict, or reconstruct them from earlier trips or announce arrival yourself.\nAuto-tracking updates position continuously; do not ask the player to refresh it.\nPlanet direction calibration starts quietly when this skill activates and stays\ncurrent between targets while Star Citizen is focused and its panel is readable.\nA valid warm calibration can provide direction immediately when navigation starts.\nInitial calibration still needs enough usable readings; never promise instant\ndirection before calibration is valid. Stopping navigation keeps calibration\nrunning; deactivating the skill stops its background captures.\nFor spoken distances, write the decimal separator as the word \"point\" and\nspell out the unit: \"4 point 5 kilometers\", \"98 meters\". Read fractional\ndigits individually. Preserve this wording from tool guidance; do not turn\nit back into \"4.5 km\". Compact units on the visual HUD are separate.\nWhen asked for guidance to an ADDRESS waypoint, report the COARSE DISTANCE ONLY and say no\ndirection is available. Keep the tool's own hedging words; do not upgrade\n\"roughly\" into an exact figure. Do not announce or imply arrival for one of\nthese however small the distance gets: the skill withholds arrival there on\npurpose, because the saved position of a target on a rotating body is\ndeliberately stale within a body-sized envelope.\nWhen asked for guidance to an older OPEN SPACE waypoint, report the DISTANCE ONLY and say the direction\nis not available yet. Never invent or infer a turn direction: the direction data\nis known to be wrong out there and is deliberately withheld, and guessing sends\nthe player the wrong way.\nWhen asked for guidance to a SURFACE waypoint, briefly give the requested distance\nor direction from the latest tool result. Never read local coordinate numbers.\nIf the tool refuses a different-body target, relay its reason.\n\n**The ring overlay:**\nOn activation, the skill posts the saved-locations dashboard link in Wingman's\nchat, with a QR code and local-network link for a phone or tablet when available.\nThe phone or tablet must be on the same network. Starting navigation does not\nopen a browser. Let the player open the\nlink when needed; call `show_navpoint_hud` only when they explicitly ask to\nopen the dashboard. Do not open it as a follow-up to starting navigation.\nWhile navigating, a deflection ring is drawn over the game itself, hanging from the top\ncentre of the screen: a bubble concentric with the circle means the target is dead ahead,\nand the bubble reaches the wall at 45 degrees or more off. It only appears over Star\nCitizen in borderless windowed mode; exclusive fullscreen bypasses the desktop compositor,\nso nothing can draw over it. If the player says the ring is missing, ask which display\nmode the game is in before assuming anything is broken. A ring with a small hollow centre\nand no bubble means a target is set but no trustworthy position fix exists yet.\n\nWhile auto-tracking is active, the skill itself announces a heads-up as the player nears\nthe target and automatically ends navigation once they arrive. These announcements come\nstraight from the skill, not from a tool call, so do not repeat or re-issue them yourself.\n\nThe tablet deck shares command lights with voice commands. Tablet actions are noted at the next user turn.\nThe tablet's lights are remembered, not read from the game; if the player says a tablet light is wrong, correct it with correct_tablet_light and do not toggle the ship.\nEmotes only play on foot. Sending an emote key is not proof it played; say sent, never done, and explain this if an emote did not play."
+hint:
+  en: Ask about keyboard or mouse controls from your own Star Citizen installation.
+examples:
+- en: Which key is the quantum drive?
+- en: What does Right Alt K do?
+- en: Which key locks the doors?
+custom_properties:
+- id: game_folder
+  name: Star Citizen LIVE folder
+  property_type: string
+  value: auto
+  required: true
+  hint: Auto-detect, or enter the full StarCitizen\LIVE directory.
+- id: endearments
+  name: Endearments in rotation
+  property_type: string
+  value: ''
+  required: false
+  hint: Comma-separated; empty items mean none. Empty disables endearments.
+- id: auto_update_commands
+  name: Update moved command keys
+  property_type: boolean
+  value: true
+  required: false
+  hint: Repair verified voice-command steps when your controls change.
+- id: restore_custom_binds
+  name: Restore listed custom keys
+  property_type: boolean
+  value: false
+  required: false
+  hint: Restore custom_binds.json entries only while Star Citizen is closed.
+- id: fresh_start
+  name: 'Fresh start: re-import everything'
+  property_type: boolean
+  value: false
+  required: false
+  hint: Switch on to re-import all keybindings as on a fresh install. Runs once; switch
+    off again to re-arm.
+- id: display
+  name: Ring overlay monitor if the game window isn't found (1 = primary)
+  property_type: number
+  required: true
+  value: 1
+- id: arrival_alert_distance
+  name: Arrival heads-up distance in meters (0 disables)
+  property_type: number
+  required: false
+  value: 1000
+- id: arrival_stop_distance
+  name: Arrival auto-stop distance in meters (0 disables; needs two consecutive readings)
+  property_type: number
+  required: false
+  value: 250
+- id: overlay_size
+  name: Ring overlay diameter in pixels (120-600)
+  property_type: number
+  required: false
+  value: 220
+- id: deck_setup
+  name: Set up deck commands and keybinds
+  hint: Adds the deck's commands to this wingman and binds free keys in the Star Citizen profile. Star Citizen must be closed when it applies; backups are kept.
+  property_type: boolean
+  value: false
+  required: false
+- id: deck_enabled
+  name: Deck Enabled
+  property_type: boolean
+  value: true
+  required: false
+- id: deck_port
+  name: Deck Port
+  property_type: number
+  value: 7869
+  required: false
+- id: deck_feedback
+  name: Deck Feedback
+  property_type: single_select
+  value: ai
+  required: false
+  options:
+  - label: 'off'
+    value: 'off'
+  - label: note
+    value: note
+  - label: speak
+    value: speak
+  - label: ai
+    value: ai
+- id: deck_tablet_mic
+  name: Deck Tablet Mic
+  property_type: boolean
+  value: true
+  required: false
+- id: deck_emotes
+  name: Deck Emotes
+  property_type: boolean
+  value: true
+  required: false

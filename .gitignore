@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.pyd
+*.dll
+.pytest_cache/
+.venv/
+venv/
+dist/
+tests/*results.json
+tests/keybindings/zstd-matrix.json
+generated_files/

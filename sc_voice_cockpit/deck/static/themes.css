@@ -1,0 +1,223 @@
+/* Manufacturer themes. Everything a theme changes is a custom property, so any element
+   with data-theme="..." (the page, or a preview card in the picker) restyles itself. */
+
+:root {
+  --stars:
+    radial-gradient(1px 1px at 8% 14%, rgba(255,255,255,.75), transparent 70%),
+    radial-gradient(1px 1px at 23% 62%, rgba(255,255,255,.45), transparent 70%),
+    radial-gradient(1.5px 1.5px at 37% 28%, rgba(255,255,255,.6), transparent 70%),
+    radial-gradient(1px 1px at 52% 81%, rgba(255,255,255,.4), transparent 70%),
+    radial-gradient(1px 1px at 64% 9%, rgba(255,255,255,.55), transparent 70%),
+    radial-gradient(1.5px 1.5px at 76% 47%, rgba(255,255,255,.5), transparent 70%),
+    radial-gradient(1px 1px at 88% 72%, rgba(255,255,255,.6), transparent 70%),
+    radial-gradient(1px 1px at 94% 22%, rgba(255,255,255,.35), transparent 70%);
+  --grid:
+    linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px) 0 0 / 44px 44px;
+}
+
+/* ---------- Roberts Space Industries ---------- */
+[data-theme="rsi"] {
+  --bg: #05090f;
+  --bg-art: radial-gradient(ellipse 90% 60% at 75% -10%, rgba(64,150,255,.22), transparent 60%), var(--stars);
+  --panel: #0b1420; --panel-hi: #122236; --line: #1c2c40; --line-hi: #35598a;
+  --text: #e8f2fc; --dim: #7f95ad;
+  --accent: #4fb3ff; --green: #46d79a; --amber: #ffbe55; --red: #ff5f6d; --blue: #4fb3ff;
+  --font-display: "Exo 2", system-ui, sans-serif; --font-body: "Exo 2", system-ui, sans-serif;
+  --label-case: uppercase; --label-track: .06em; --label-weight: 600;
+  --key-radius: 6px; --key-clip: none; --key-edge: 3px;
+  --key-bg: linear-gradient(160deg, #0f1c2c, #08111b);
+  --key-top: linear-gradient(90deg, currentColor, transparent 75%); --key-top-h: 2px;
+  --icon-stroke: 2.2; --icon-glow: drop-shadow(0 0 6px color-mix(in srgb, currentColor 55%, transparent));
+  --tab-radius: 8px 8px 0 0;
+}
+
+/* ---------- Drake Interplanetary ---------- */
+[data-theme="drake"] {
+  --bg: #0b0a08;
+  --bg-art: radial-gradient(ellipse 70% 50% at 15% -5%, rgba(242,194,48,.13), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.018) 0 2px, transparent 2px 5px);
+  --panel: #16140f; --panel-hi: #221e14; --line: #2d281c; --line-hi: #6b5820;
+  --text: #f1e8d0; --dim: #9c9176;
+  --accent: #f2c230; --green: #a6d13c; --amber: #f2c230; --red: #ec5a2e; --blue: #d4b77a;
+  --font-display: "Saira Stencil One", Impact, sans-serif; --font-body: "Saira Condensed", "Arial Narrow", sans-serif;
+  --label-case: uppercase; --label-track: .07em; --label-weight: 700;
+  --key-radius: 0; --key-edge: 0;
+  --key-clip: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  --key-bg: linear-gradient(180deg, #1c1912, #100e0a);
+  --key-top: repeating-linear-gradient(-45deg, currentColor 0 9px, #0d0c09 9px 18px); --key-top-h: 7px;
+  --icon-stroke: 2.8; --icon-glow: none;
+  --tab-radius: 0;
+}
+
+/* ---------- Aegis Dynamics ---------- */
+[data-theme="aegis"] {
+  --bg: #06080b;
+  --bg-art: radial-gradient(ellipse 60% 45% at 85% 0, rgba(255,59,59,.12), transparent 60%), var(--grid);
+  --panel: #0e1217; --panel-hi: #161c24; --line: #232b35; --line-hi: #525e6d;
+  --text: #f3f5f8; --dim: #8691a1;
+  --accent: #ff3b3b; --green: #5fd18a; --amber: #ffb648; --red: #ff3b3b; --blue: #8fb6dc;
+  --font-display: "Rajdhani", "Segoe UI", sans-serif; --font-body: "Rajdhani", "Segoe UI", sans-serif;
+  --label-case: uppercase; --label-track: .12em; --label-weight: 700;
+  --key-radius: 0; --key-edge: 0;
+  --key-clip: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+  --key-bg: linear-gradient(135deg, #151b22, #0a0d11);
+  --key-top: linear-gradient(90deg, currentColor 0 56px, rgba(255,255,255,.12) 56px); --key-top-h: 3px;
+  --icon-stroke: 2.2; --icon-glow: drop-shadow(0 0 5px color-mix(in srgb, currentColor 45%, transparent));
+  --tab-radius: 0;
+}
+
+/* ---------- Anvil Aerospace ---------- */
+[data-theme="anvil"] {
+  --bg: #0a0c08;
+  --bg-art: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(181,204,74,.12), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.015) 0 1px, transparent 1px 22px);
+  --panel: #141811; --panel-hi: #1d2317; --line: #2a3120; --line-hi: #5c6b3b;
+  --text: #e5e2ca; --dim: #969279;
+  --accent: #b5cc4a; --green: #b5cc4a; --amber: #e6a93a; --red: #dc573c; --blue: #8fb09e;
+  --font-display: "Black Ops One", Impact, sans-serif; --font-body: "Chakra Petch", "Segoe UI", sans-serif;
+  --label-case: uppercase; --label-track: .08em; --label-weight: 600;
+  --key-radius: 0; --key-edge: 0;
+  --key-clip: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+  --key-bg: linear-gradient(180deg, #1a1f15, #0f120c);
+  --key-top: linear-gradient(90deg, currentColor, color-mix(in srgb, currentColor 30%, transparent)); --key-top-h: 4px;
+  --icon-stroke: 2.6; --icon-glow: none;
+  --tab-radius: 0;
+}
+
+/* ---------- Origin Jumpworks (light) ---------- */
+[data-theme="origin"] {
+  color-scheme: light;
+  --bg: #e7eaee;
+  --bg-art: radial-gradient(ellipse 80% 60% at 50% -20%, #ffffff, transparent 65%), linear-gradient(180deg, #f2f3f5, #dde1e6);
+  --panel: #ffffff; --panel-hi: #f7f2e8; --line: #d6dae0; --line-hi: #c7ad7e;
+  --text: #1c222a; --dim: #79818c;
+  --accent: #b08d57; --green: #3d9a73; --amber: #c38a2b; --red: #c4463e; --blue: #4b7ea8;
+  --font-display: "Montserrat", "Segoe UI", sans-serif; --font-body: "Montserrat", "Segoe UI", sans-serif;
+  --label-case: uppercase; --label-track: .09em; --label-weight: 600;
+  --key-radius: 18px; --key-clip: none; --key-edge: 0;
+  --key-bg: linear-gradient(180deg, #ffffff, #f3f4f6);
+  --key-top: linear-gradient(90deg, transparent 10%, currentColor, transparent 90%); --key-top-h: 2px;
+  --key-shadow: 0 8px 22px rgba(30,40,60,.08);
+  --icon-stroke: 1.6; --icon-glow: none;
+  --tab-radius: 14px 14px 0 0;
+  --label-shadow: 0 1px 0 rgba(255,255,255,.9); --state-shadow: none;
+}
+
+/* ---------- MISC ---------- */
+[data-theme="misc"] {
+  --bg: #061012;
+  --bg-art: radial-gradient(ellipse 70% 50% at 20% -10%, rgba(46,196,182,.16), transparent 60%), var(--grid);
+  --panel: #0c191c; --panel-hi: #11252a; --line: #183030; --line-hi: #2c5d58;
+  --text: #e0f4f2; --dim: #7fa6a3;
+  --accent: #2ec4b6; --green: #2ec4b6; --amber: #ff8a2a; --red: #ff5a4e; --blue: #4aa8ff;
+  --font-display: "Oxanium", "Segoe UI", sans-serif; --font-body: "Oxanium", "Segoe UI", sans-serif;
+  --label-case: uppercase; --label-track: .07em; --label-weight: 600;
+  --key-radius: 4px; --key-edge: 4px;
+  --key-clip: polygon(0 0, 100% 0, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+  --key-bg: linear-gradient(170deg, #0f2125, #091416);
+  --key-top: linear-gradient(90deg, currentColor 0 34%, transparent 34%); --key-top-h: 4px;
+  --icon-stroke: 2.3; --icon-glow: drop-shadow(0 0 5px color-mix(in srgb, currentColor 45%, transparent));
+  --tab-radius: 4px 4px 0 0;
+}
+
+/* ---------- Crusader Industries ---------- */
+[data-theme="crusader"] {
+  --bg: #061322;
+  --bg-art: radial-gradient(ellipse 100% 70% at 50% -20%, rgba(110,198,255,.28), transparent 65%),
+    radial-gradient(ellipse 60% 30% at 10% 100%, rgba(110,198,255,.10), transparent 70%), var(--stars);
+  --panel: #0c2034; --panel-hi: #123050; --line: #1d3b59; --line-hi: #4380b6;
+  --text: #ecf7ff; --dim: #8fb2cf;
+  --accent: #6ec6ff; --green: #6fe0b0; --amber: #ffd36e; --red: #ff7a86; --blue: #6ec6ff;
+  --font-display: "Exo 2", system-ui, sans-serif; --font-body: "Exo 2", system-ui, sans-serif;
+  --label-case: none; --label-track: .02em; --label-weight: 600;
+  --key-radius: 14px; --key-clip: none; --key-edge: 0;
+  --key-bg: linear-gradient(180deg, rgba(110,198,255,.13), rgba(110,198,255,.03)), #0b1d31;
+  --key-top: linear-gradient(90deg, transparent, currentColor, transparent); --key-top-h: 2px;
+  --icon-stroke: 2; --icon-glow: drop-shadow(0 0 8px color-mix(in srgb, currentColor 50%, transparent));
+  --tab-radius: 12px 12px 0 0;
+}
+
+/* ---------- Banu ---------- */
+[data-theme="banu"] {
+  --bg: #130910;
+  --bg-art: radial-gradient(ellipse 60% 50% at 0 0, rgba(255,79,139,.18), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(242,163,58,.16), transparent 60%),
+    repeating-radial-gradient(circle at 50% 120%, rgba(255,255,255,.02) 0 2px, transparent 2px 26px);
+  --panel: #1f1019; --panel-hi: #2c1624; --line: #3c2032; --line-hi: #7d4066;
+  --text: #fcebf3; --dim: #b68ca2;
+  --accent: #f2a33a; --green: #7fd6a8; --amber: #f2a33a; --red: #ff4f8b; --blue: #b48cff;
+  --font-display: "Marcellus", Georgia, serif; --font-body: "Marcellus", Georgia, serif;
+  --label-case: none; --label-track: .03em; --label-weight: 400;
+  --key-radius: 26px 8px 26px 8px; --key-clip: none; --key-edge: 0;
+  --key-bg: radial-gradient(circle at 15% 12%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 55%), linear-gradient(160deg, #27131f, #160a12);
+  --key-top: none; --key-top-h: 0px;
+  --icon-stroke: 2; --icon-glow: drop-shadow(0 0 7px color-mix(in srgb, currentColor 55%, transparent));
+  --tab-radius: 18px 6px 0 0;
+}
+
+/* ---------- Aopoa ---------- */
+[data-theme="aopoa"] {
+  --bg: #040f0d;
+  --bg-art: radial-gradient(ellipse 70% 55% at 80% -10%, rgba(62,230,176,.18), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 0 90%, rgba(95,201,255,.10), transparent 65%), var(--stars);
+  --panel: #0a1b18; --panel-hi: #0f2a25; --line: #163631; --line-hi: #2f7464;
+  --text: #e3fff7; --dim: #80b5a7;
+  --accent: #3ee6b0; --green: #3ee6b0; --amber: #e6d35a; --red: #ff6b7d; --blue: #5fc9ff;
+  --font-display: "Comfortaa", "Segoe UI", sans-serif; --font-body: "Comfortaa", "Segoe UI", sans-serif;
+  --label-case: none; --label-track: .03em; --label-weight: 700;
+  --key-radius: 34px 34px 10px 34px; --key-clip: none; --key-edge: 0;
+  --key-bg: linear-gradient(200deg, #0f2723, #07120f);
+  --key-top: none; --key-top-h: 0px;
+  --icon-stroke: 2; --icon-glow: drop-shadow(0 0 8px color-mix(in srgb, currentColor 55%, transparent));
+  --tab-radius: 20px 20px 0 0;
+}
+
+/* ---------- Argo Astronautics ---------- */
+[data-theme="argo"] {
+  --bg: #0f1012;
+  --bg-art: radial-gradient(ellipse 60% 40% at 100% 0, rgba(255,176,0,.10), transparent 60%), var(--grid);
+  --panel: #1a1c1f; --panel-hi: #24272b; --line: #2d3035; --line-hi: #5d6168;
+  --text: #f2f2ef; --dim: #9b9da1;
+  --accent: #ffb000; --green: #8fd14f; --amber: #ffb000; --red: #ff5a36; --blue: #6db3d6;
+  --font-display: "Chakra Petch", "Segoe UI", sans-serif; --font-body: "Chakra Petch", "Segoe UI", sans-serif;
+  --label-case: uppercase; --label-track: .05em; --label-weight: 700;
+  --key-radius: 2px; --key-clip: none; --key-edge: 7px;
+  --key-bg: linear-gradient(180deg, #202327, #15171a);
+  --key-top: none; --key-top-h: 0px;
+  --icon-stroke: 2.6; --icon-glow: none;
+  --tab-radius: 2px 2px 0 0;
+}
+
+/* ---------- Consolidated Outland ---------- */
+[data-theme="cnou"] {
+  --bg: #0d0a08;
+  --bg-art: radial-gradient(ellipse 80% 55% at 30% -15%, rgba(255,106,19,.18), transparent 60%), var(--stars);
+  --panel: #18120d; --panel-hi: #241a12; --line: #2f231a; --line-hi: #70452a;
+  --text: #fff4eb; --dim: #b29a87;
+  --accent: #ff6a13; --green: #69d68c; --amber: #ffb03b; --red: #ff4a3d; --blue: #5cb8ff;
+  --font-display: "Montserrat", "Segoe UI", sans-serif; --font-body: "Montserrat", "Segoe UI", sans-serif;
+  --label-case: uppercase; --label-track: .04em; --label-weight: 700;
+  --key-radius: 12px; --key-clip: none; --key-edge: 0;
+  --key-bg: linear-gradient(160deg, #1f1710, #120d09);
+  --key-top: linear-gradient(90deg, currentColor 0 52px, transparent 52px); --key-top-h: 5px;
+  --icon-stroke: 2.4; --icon-glow: drop-shadow(0 0 5px color-mix(in srgb, currentColor 40%, transparent));
+  --tab-radius: 10px 10px 0 0;
+}
+
+/* ---------- Esperia ---------- */
+[data-theme="esperia"] {
+  --bg: #0e0608;
+  --bg-art: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(224,56,79,.18), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 100% 100%, rgba(217,164,65,.10), transparent 70%), var(--stars);
+  --panel: #1a0c10; --panel-hi: #261118; --line: #37171f; --line-hi: #7c2c3a;
+  --text: #f9ede1; --dim: #b49383;
+  --accent: #d9a441; --green: #8fcf8a; --amber: #d9a441; --red: #e0384f; --blue: #a3aaff;
+  --font-display: "Cinzel", Georgia, serif; --font-body: "Cinzel", Georgia, serif;
+  --label-case: uppercase; --label-track: .09em; --label-weight: 700;
+  --key-radius: 0 20px 0 20px; --key-clip: none; --key-edge: 0;
+  --key-bg: linear-gradient(170deg, #230f15, #12070a);
+  --key-top: linear-gradient(90deg, transparent, var(--accent), transparent); --key-top-h: 1px;
+  --icon-stroke: 1.9; --icon-glow: drop-shadow(0 0 6px color-mix(in srgb, currentColor 45%, transparent));
+  --tab-radius: 0 14px 0 0;
+}

@@ -1,0 +1,1445 @@
+{
+  "provenance": {
+    "source_archive": "LIVE/Data.p4k",
+    "source_member": "Data/Localization/english/global.ini",
+    "source_sha256": "7df68893f0ec8564d9e123024cf06c6c731dd7acc36b528c7caa06104ad74e11",
+    "scope": "Localization labels, not a verified complete list of active coordinate frames or playable locations",
+    "entries": 90363,
+    "location_candidates": 2943
+  },
+  "frames": {
+    "levski_all-001": {
+      "canonical_name": "levski_all-001",
+      "label": "Levski",
+      "kind": "site",
+      "system": "Nyx",
+      "source_key": "Delamar_Levski",
+      "source_line": 5605,
+      "frame_evidence": "Live panel rows, 2026-09-15 23:03:25 and 23:03:39; levski_all-001 between ship and SolarSystem. Extracted asset: Data/ObjectContainers/PU/loc/flagship/nyx/levski/levski_all.socpak. Exact observed alias only; local camera alignment not yet live-validated."
+    },
+    "ab_mine_stanton1_med_001": {
+      "canonical_name": "ab_mine_stanton1_med_001",
+      "label": "Mining Base #IGB-FXW",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Medium_01",
+      "source_line": 417
+    },
+    "ab_mine_stanton1_med_002": {
+      "canonical_name": "ab_mine_stanton1_med_002",
+      "label": "Mining Base #YTO-GLQ",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Medium_02",
+      "source_line": 418
+    },
+    "ab_mine_stanton1_med_003": {
+      "canonical_name": "ab_mine_stanton1_med_003",
+      "label": "Mining Base #LBP-UN5",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Medium_03",
+      "source_line": 419
+    },
+    "ab_mine_stanton1_med_004": {
+      "canonical_name": "ab_mine_stanton1_med_004",
+      "label": "Mining Base #6IN-P02",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Medium_04",
+      "source_line": 420
+    },
+    "ab_mine_stanton1_med_005": {
+      "canonical_name": "ab_mine_stanton1_med_005",
+      "label": "Mining Base #01K-I43",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Medium_05",
+      "source_line": 421
+    },
+    "ab_mine_stanton1_med_006": {
+      "canonical_name": "ab_mine_stanton1_med_006",
+      "label": "Mining Base #BBR-4JQ",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Medium_06",
+      "source_line": 422
+    },
+    "ab_mine_stanton1_med_007": {
+      "canonical_name": "ab_mine_stanton1_med_007",
+      "label": "Mining Base #365-YNZ",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Medium_07",
+      "source_line": 423
+    },
+    "ab_mine_stanton1_med_008": {
+      "canonical_name": "ab_mine_stanton1_med_008",
+      "label": "Mining Base #ODD-E9B",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Medium_08",
+      "source_line": 424
+    },
+    "ab_mine_stanton1_med_009": {
+      "canonical_name": "ab_mine_stanton1_med_009",
+      "label": "Mining Base #WUO-ZRU",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Medium_09",
+      "source_line": 425
+    },
+    "ab_mine_stanton1_sml_001": {
+      "canonical_name": "ab_mine_stanton1_sml_001",
+      "label": "Mining Base #7LI-0OA",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Small_01",
+      "source_line": 426
+    },
+    "ab_mine_stanton1_sml_002": {
+      "canonical_name": "ab_mine_stanton1_sml_002",
+      "label": "Mining Base #6RU-55R",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Small_02",
+      "source_line": 427
+    },
+    "ab_mine_stanton1_sml_003": {
+      "canonical_name": "ab_mine_stanton1_sml_003",
+      "label": "Mining Base #R08-Y3K",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton01_Small_03",
+      "source_line": 428
+    },
+    "ab_mine_stanton2_med_001": {
+      "canonical_name": "ab_mine_stanton2_med_001",
+      "label": "Mining Base #UU6-1EI",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_01",
+      "source_line": 429
+    },
+    "ab_mine_stanton2_med_002": {
+      "canonical_name": "ab_mine_stanton2_med_002",
+      "label": "Mining Base #Q4U-I20",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_02",
+      "source_line": 430
+    },
+    "ab_mine_stanton2_med_003": {
+      "canonical_name": "ab_mine_stanton2_med_003",
+      "label": "Mining Base #Z48-013",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_03",
+      "source_line": 431
+    },
+    "ab_mine_stanton2_med_004": {
+      "canonical_name": "ab_mine_stanton2_med_004",
+      "label": "Mining Base #E38-S5G",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_04",
+      "source_line": 432
+    },
+    "ab_mine_stanton2_med_005": {
+      "canonical_name": "ab_mine_stanton2_med_005",
+      "label": "Mining Base #W79-2H7",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_05",
+      "source_line": 433
+    },
+    "ab_mine_stanton2_med_006": {
+      "canonical_name": "ab_mine_stanton2_med_006",
+      "label": "Mining Base #QXS-NBS",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_06",
+      "source_line": 434
+    },
+    "ab_mine_stanton2_med_007": {
+      "canonical_name": "ab_mine_stanton2_med_007",
+      "label": "Mining Base #URB-H3V",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_07",
+      "source_line": 435
+    },
+    "ab_mine_stanton2_med_008": {
+      "canonical_name": "ab_mine_stanton2_med_008",
+      "label": "Mining Base #R75-5PZ",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_08",
+      "source_line": 436
+    },
+    "ab_mine_stanton2_med_009": {
+      "canonical_name": "ab_mine_stanton2_med_009",
+      "label": "Mining Base #IO3-H1F",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_09",
+      "source_line": 437
+    },
+    "ab_mine_stanton2_med_010": {
+      "canonical_name": "ab_mine_stanton2_med_010",
+      "label": "Mining Base #51F-OGH",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Medium_10",
+      "source_line": 438
+    },
+    "ab_mine_stanton2_sml_001": {
+      "canonical_name": "ab_mine_stanton2_sml_001",
+      "label": "Mining Base #90O-0HA",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Small_01",
+      "source_line": 439
+    },
+    "ab_mine_stanton2_sml_002": {
+      "canonical_name": "ab_mine_stanton2_sml_002",
+      "label": "Mining Base #4PI-3YY",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton02_Small_02",
+      "source_line": 440
+    },
+    "ab_mine_stanton3_med_001": {
+      "canonical_name": "ab_mine_stanton3_med_001",
+      "label": "Mining Base #CZW-RRY",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_01",
+      "source_line": 441
+    },
+    "ab_mine_stanton3_med_002": {
+      "canonical_name": "ab_mine_stanton3_med_002",
+      "label": "Mining Base #7IQ-29Q",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_02",
+      "source_line": 442
+    },
+    "ab_mine_stanton3_med_003": {
+      "canonical_name": "ab_mine_stanton3_med_003",
+      "label": "Mining Base #INX-KPJ",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_03",
+      "source_line": 443
+    },
+    "ab_mine_stanton3_med_004": {
+      "canonical_name": "ab_mine_stanton3_med_004",
+      "label": "Mining Base #ZHY-77G",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_04",
+      "source_line": 444
+    },
+    "ab_mine_stanton3_med_005": {
+      "canonical_name": "ab_mine_stanton3_med_005",
+      "label": "Mining Base #OYV-JKE",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_05",
+      "source_line": 445
+    },
+    "ab_mine_stanton3_med_006": {
+      "canonical_name": "ab_mine_stanton3_med_006",
+      "label": "Mining Base #8CG-OSA",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_06",
+      "source_line": 446
+    },
+    "ab_mine_stanton3_med_007": {
+      "canonical_name": "ab_mine_stanton3_med_007",
+      "label": "Mining Base #A73-HTJ",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_07",
+      "source_line": 447
+    },
+    "ab_mine_stanton3_med_008": {
+      "canonical_name": "ab_mine_stanton3_med_008",
+      "label": "Mining Base #74H-2DO",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_08",
+      "source_line": 448
+    },
+    "ab_mine_stanton3_med_009": {
+      "canonical_name": "ab_mine_stanton3_med_009",
+      "label": "Mining Base #BRE-582",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_09",
+      "source_line": 449
+    },
+    "ab_mine_stanton3_med_010": {
+      "canonical_name": "ab_mine_stanton3_med_010",
+      "label": "Mining Base #6DO-K6A",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_10",
+      "source_line": 450
+    },
+    "ab_mine_stanton3_med_011": {
+      "canonical_name": "ab_mine_stanton3_med_011",
+      "label": "Mining Base #118-NA2",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_11",
+      "source_line": 451
+    },
+    "ab_mine_stanton3_med_012": {
+      "canonical_name": "ab_mine_stanton3_med_012",
+      "label": "Mining Base #4R0-NVX",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_12",
+      "source_line": 452
+    },
+    "ab_mine_stanton3_med_013": {
+      "canonical_name": "ab_mine_stanton3_med_013",
+      "label": "Mining Base #8PV-WNE",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Medium_13",
+      "source_line": 453
+    },
+    "ab_mine_stanton3_sml_001": {
+      "canonical_name": "ab_mine_stanton3_sml_001",
+      "label": "Mining Base #N6J-XKH",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Small_01",
+      "source_line": 454
+    },
+    "ab_mine_stanton3_sml_002": {
+      "canonical_name": "ab_mine_stanton3_sml_002",
+      "label": "Mining Base #RSV-8HL",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Small_02",
+      "source_line": 455
+    },
+    "ab_mine_stanton3_sml_003": {
+      "canonical_name": "ab_mine_stanton3_sml_003",
+      "label": "Mining Base #BSK-IJ5",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Small_03",
+      "source_line": 456
+    },
+    "ab_mine_stanton3_sml_004": {
+      "canonical_name": "ab_mine_stanton3_sml_004",
+      "label": "Mining Base #0YX-O7Z",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Small_04",
+      "source_line": 457
+    },
+    "ab_mine_stanton3_sml_005": {
+      "canonical_name": "ab_mine_stanton3_sml_005",
+      "label": "Mining Base #7YH-JX7",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Small_05",
+      "source_line": 458
+    },
+    "ab_mine_stanton3_sml_006": {
+      "canonical_name": "ab_mine_stanton3_sml_006",
+      "label": "Mining Base #PHB-DYC",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton03_Small_06",
+      "source_line": 459
+    },
+    "ab_mine_stanton4_med_001": {
+      "canonical_name": "ab_mine_stanton4_med_001",
+      "label": "Mining Base #1XA-3GI",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_01",
+      "source_line": 460
+    },
+    "ab_mine_stanton4_med_002": {
+      "canonical_name": "ab_mine_stanton4_med_002",
+      "label": "Mining Base #GO4-CH0",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_02",
+      "source_line": 461
+    },
+    "ab_mine_stanton4_med_003": {
+      "canonical_name": "ab_mine_stanton4_med_003",
+      "label": "Mining Base #AL5-XPD",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_03",
+      "source_line": 462
+    },
+    "ab_mine_stanton4_med_004": {
+      "canonical_name": "ab_mine_stanton4_med_004",
+      "label": "Mining Base #CVF-T6H",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_04",
+      "source_line": 463
+    },
+    "ab_mine_stanton4_med_005": {
+      "canonical_name": "ab_mine_stanton4_med_005",
+      "label": "Mining Base #U5X-NGQ",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_05",
+      "source_line": 464
+    },
+    "ab_mine_stanton4_med_006": {
+      "canonical_name": "ab_mine_stanton4_med_006",
+      "label": "Mining Base #JUG-0KZ",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_06",
+      "source_line": 465
+    },
+    "ab_mine_stanton4_med_007": {
+      "canonical_name": "ab_mine_stanton4_med_007",
+      "label": "Mining Base #UDK-IJX",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_07",
+      "source_line": 466
+    },
+    "ab_mine_stanton4_med_008": {
+      "canonical_name": "ab_mine_stanton4_med_008",
+      "label": "Mining Base #X92-IVA",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_08",
+      "source_line": 467
+    },
+    "ab_mine_stanton4_med_009": {
+      "canonical_name": "ab_mine_stanton4_med_009",
+      "label": "Mining Base #DU4-XBU",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_09",
+      "source_line": 468
+    },
+    "ab_mine_stanton4_med_010": {
+      "canonical_name": "ab_mine_stanton4_med_010",
+      "label": "Mining Base #734-A26",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_10",
+      "source_line": 469
+    },
+    "ab_mine_stanton4_med_011": {
+      "canonical_name": "ab_mine_stanton4_med_011",
+      "label": "Mining Base #XJZ-JR2",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_11",
+      "source_line": 470
+    },
+    "ab_mine_stanton4_med_012": {
+      "canonical_name": "ab_mine_stanton4_med_012",
+      "label": "Mining Base #Q9Q-090",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_12",
+      "source_line": 471
+    },
+    "ab_mine_stanton4_med_013": {
+      "canonical_name": "ab_mine_stanton4_med_013",
+      "label": "Mining Base #5U5-TLC",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_13",
+      "source_line": 472
+    },
+    "ab_mine_stanton4_med_014": {
+      "canonical_name": "ab_mine_stanton4_med_014",
+      "label": "Mining Base #SAG-2UN",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Medium_14",
+      "source_line": 473
+    },
+    "ab_mine_stanton4_sml_001": {
+      "canonical_name": "ab_mine_stanton4_sml_001",
+      "label": "Mining Base #C6P-3KJ",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Small_01",
+      "source_line": 474
+    },
+    "ab_mine_stanton4_sml_002": {
+      "canonical_name": "ab_mine_stanton4_sml_002",
+      "label": "Mining Base #851-81H",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Small_02",
+      "source_line": 475
+    },
+    "ab_mine_stanton4_sml_003": {
+      "canonical_name": "ab_mine_stanton4_sml_003",
+      "label": "Mining Base #TP1-N76",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Small_03",
+      "source_line": 476
+    },
+    "ab_mine_stanton4_sml_004": {
+      "canonical_name": "ab_mine_stanton4_sml_004",
+      "label": "Mining Base #R7J-WJ7",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Small_04",
+      "source_line": 477
+    },
+    "ab_mine_stanton4_sml_005": {
+      "canonical_name": "ab_mine_stanton4_sml_005",
+      "label": "Mining Base #0Z9-SVV",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Small_05",
+      "source_line": 478
+    },
+    "ab_mine_stanton4_sml_006": {
+      "canonical_name": "ab_mine_stanton4_sml_006",
+      "label": "Mining Base #RCD-OB3",
+      "kind": "site",
+      "system": "Stanton",
+      "source_key": "AsteroidCluster_MiningBase_Stanton04_Small_06",
+      "source_line": 479
+    },
+    "pyro1": {
+      "canonical_name": "pyro1",
+      "label": "Pyro I",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro1",
+      "source_line": 45482
+    },
+    "pyro2": {
+      "canonical_name": "pyro2",
+      "label": "Monox",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro2",
+      "source_line": 45598
+    },
+    "pyro3": {
+      "canonical_name": "pyro3",
+      "label": "Bloom",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro3",
+      "source_line": 45740
+    },
+    "pyro4": {
+      "canonical_name": "pyro4",
+      "label": "Pyro IV",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro4",
+      "source_line": 45866
+    },
+    "pyro5": {
+      "canonical_name": "pyro5",
+      "label": "Pyro V",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro5",
+      "source_line": 45893
+    },
+    "pyro5a": {
+      "canonical_name": "pyro5a",
+      "label": "Ignis",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro5a_Ignis",
+      "source_line": 45985
+    },
+    "pyro5b": {
+      "canonical_name": "pyro5b",
+      "label": "Vatra",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro5b_Vatra",
+      "source_line": 45999
+    },
+    "pyro5c": {
+      "canonical_name": "pyro5c",
+      "label": "Adir",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro5c_Adir",
+      "source_line": 46001
+    },
+    "pyro5d": {
+      "canonical_name": "pyro5d",
+      "label": "Fairo",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro5d_Fairo",
+      "source_line": 46007
+    },
+    "pyro5e": {
+      "canonical_name": "pyro5e",
+      "label": "Fuego",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro5e_Fuego",
+      "source_line": 46013
+    },
+    "pyro5f": {
+      "canonical_name": "pyro5f",
+      "label": "Vuur",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro5f_Vuur",
+      "source_line": 46035
+    },
+    "pyro6": {
+      "canonical_name": "pyro6",
+      "label": "Terminus",
+      "kind": "planet",
+      "system": "Pyro",
+      "source_key": "Pyro6",
+      "source_line": 46037
+    },
+    "ooc_stanton_1_hurston": {
+      "canonical_name": "OOC_Stanton_1_Hurston",
+      "label": "Hurston",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton1",
+      "source_line": 48000
+    },
+    "ooc_stanton_1a_arial": {
+      "canonical_name": "OOC_Stanton_1a_Arial",
+      "label": "Arial",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton1a",
+      "source_line": 48138
+    },
+    "ooc_stanton_1b_aberdeen": {
+      "canonical_name": "OOC_Stanton_1b_Aberdeen",
+      "label": "Aberdeen",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton1b",
+      "source_line": 48164
+    },
+    "ooc_stanton_1c_magda\u00a0": {
+      "canonical_name": "OOC_Stanton_1c_Magda\u00a0",
+      "label": "Magda\u00a0",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton1c",
+      "source_line": 48228
+    },
+    "ooc_stanton_1d_ita": {
+      "canonical_name": "OOC_Stanton_1d_Ita",
+      "label": "Ita",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton1d",
+      "source_line": 48254
+    },
+    "ooc_stanton_2_crusader": {
+      "canonical_name": "OOC_Stanton_2_Crusader",
+      "label": "Crusader",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton2",
+      "source_line": 48280
+    },
+    "ooc_stanton_2a_cellin": {
+      "canonical_name": "OOC_Stanton_2a_Cellin",
+      "label": "Cellin",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton2a",
+      "source_line": 48342
+    },
+    "ooc_stanton_2b_daymar": {
+      "canonical_name": "OOC_Stanton_2b_Daymar",
+      "label": "Daymar",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton2b",
+      "source_line": 48390
+    },
+    "ooc_stanton_2c_yela": {
+      "canonical_name": "OOC_Stanton_2c_Yela",
+      "label": "Yela",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton2c",
+      "source_line": 48484
+    },
+    "ooc_stanton_3_arccorp": {
+      "canonical_name": "OOC_Stanton_3_ArcCorp",
+      "label": "ArcCorp",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton3",
+      "source_line": 48539
+    },
+    "ooc_stanton_3a_lyria": {
+      "canonical_name": "OOC_Stanton_3a_Lyria",
+      "label": "Lyria",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton3a",
+      "source_line": 48587
+    },
+    "ooc_stanton_3b_wala": {
+      "canonical_name": "OOC_Stanton_3b_Wala",
+      "label": "Wala",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton3b",
+      "source_line": 48654
+    },
+    "ooc_stanton_4_microtech": {
+      "canonical_name": "OOC_Stanton_4_microTech",
+      "label": "microTech",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton4",
+      "source_line": 48702
+    },
+    "ooc_stanton_4a_calliope": {
+      "canonical_name": "OOC_Stanton_4a_Calliope",
+      "label": "Calliope",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton4a",
+      "source_line": 48831
+    },
+    "ooc_stanton_4b_clio": {
+      "canonical_name": "OOC_Stanton_4b_Clio",
+      "label": "Clio",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton4b",
+      "source_line": 48874
+    },
+    "ooc_stanton_4c_euterpe": {
+      "canonical_name": "OOC_Stanton_4c_Euterpe",
+      "label": "Euterpe",
+      "kind": "planet",
+      "system": "Stanton",
+      "source_key": "Stanton4c",
+      "source_line": 48901
+    },
+    "ab_mine_pyro_desc": {
+      "canonical_name": "ab_mine_pyro_desc",
+      "label": "This Pyrotechnic Amalgamated remote mining base is no longer in active operation. Caution is advised. ",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_desc",
+      "source_line": 50692
+    },
+    "ab_mine_pyro_regiona_med_001": {
+      "canonical_name": "ab_mine_pyro_regiona_med_001",
+      "label": "RMB-PURI",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_001",
+      "source_line": 50693
+    },
+    "ab_mine_pyro_regiona_med_002": {
+      "canonical_name": "ab_mine_pyro_regiona_med_002",
+      "label": "RMB-BALM",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_002",
+      "source_line": 50694
+    },
+    "ab_mine_pyro_regiona_med_003": {
+      "canonical_name": "ab_mine_pyro_regiona_med_003",
+      "label": "RMB-ONER",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_003",
+      "source_line": 50695
+    },
+    "ab_mine_pyro_regiona_med_004": {
+      "canonical_name": "ab_mine_pyro_regiona_med_004",
+      "label": "RMB-KAIN",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_004",
+      "source_line": 50696
+    },
+    "ab_mine_pyro_regiona_med_005": {
+      "canonical_name": "ab_mine_pyro_regiona_med_005",
+      "label": "RMB-MYAL",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_005",
+      "source_line": 50697
+    },
+    "ab_mine_pyro_regiona_med_006": {
+      "canonical_name": "ab_mine_pyro_regiona_med_006",
+      "label": "RMB-CEDI",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_006",
+      "source_line": 50698
+    },
+    "ab_mine_pyro_regiona_med_007": {
+      "canonical_name": "ab_mine_pyro_regiona_med_007",
+      "label": "RMB-BALE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_007",
+      "source_line": 50699
+    },
+    "ab_mine_pyro_regiona_med_008": {
+      "canonical_name": "ab_mine_pyro_regiona_med_008",
+      "label": "RMB-RIGG",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_008",
+      "source_line": 50700
+    },
+    "ab_mine_pyro_regiona_med_009": {
+      "canonical_name": "ab_mine_pyro_regiona_med_009",
+      "label": "RMB-VOES",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_009",
+      "source_line": 50701
+    },
+    "ab_mine_pyro_regiona_med_010": {
+      "canonical_name": "ab_mine_pyro_regiona_med_010",
+      "label": "RMB-IKAN",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_010",
+      "source_line": 50702
+    },
+    "ab_mine_pyro_regiona_med_011": {
+      "canonical_name": "ab_mine_pyro_regiona_med_011",
+      "label": "RMB-DREG",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_011",
+      "source_line": 50703
+    },
+    "ab_mine_pyro_regiona_med_012": {
+      "canonical_name": "ab_mine_pyro_regiona_med_012",
+      "label": "RMB-ZARF",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_012",
+      "source_line": 50704
+    },
+    "ab_mine_pyro_regiona_med_013": {
+      "canonical_name": "ab_mine_pyro_regiona_med_013",
+      "label": "RMB-GREX",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_013",
+      "source_line": 50705
+    },
+    "ab_mine_pyro_regiona_med_014": {
+      "canonical_name": "ab_mine_pyro_regiona_med_014",
+      "label": "RMB-SHEW",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_014",
+      "source_line": 50706
+    },
+    "ab_mine_pyro_regiona_med_015": {
+      "canonical_name": "ab_mine_pyro_regiona_med_015",
+      "label": "RMB-NAIN",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_015",
+      "source_line": 50707
+    },
+    "ab_mine_pyro_regiona_med_016": {
+      "canonical_name": "ab_mine_pyro_regiona_med_016",
+      "label": "RMB-LAZO",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_016",
+      "source_line": 50708
+    },
+    "ab_mine_pyro_regiona_med_017": {
+      "canonical_name": "ab_mine_pyro_regiona_med_017",
+      "label": "RMB-ELMS",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_017",
+      "source_line": 50709
+    },
+    "ab_mine_pyro_regiona_med_018": {
+      "canonical_name": "ab_mine_pyro_regiona_med_018",
+      "label": "RMB-LIRE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_018",
+      "source_line": 50710
+    },
+    "ab_mine_pyro_regiona_med_019": {
+      "canonical_name": "ab_mine_pyro_regiona_med_019",
+      "label": "RMB-HOWE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_med_019",
+      "source_line": 50711
+    },
+    "ab_mine_pyro_regiona_sml_001": {
+      "canonical_name": "ab_mine_pyro_regiona_sml_001",
+      "label": "RMB-SURD",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_sml_001",
+      "source_line": 50712
+    },
+    "ab_mine_pyro_regiona_sml_002": {
+      "canonical_name": "ab_mine_pyro_regiona_sml_002",
+      "label": "RMB-NIGH",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_sml_002",
+      "source_line": 50713
+    },
+    "ab_mine_pyro_regiona_sml_003": {
+      "canonical_name": "ab_mine_pyro_regiona_sml_003",
+      "label": "RMB-EVEN",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_sml_003",
+      "source_line": 50714
+    },
+    "ab_mine_pyro_regiona_sml_004": {
+      "canonical_name": "ab_mine_pyro_regiona_sml_004",
+      "label": "RMB-TIAN",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiona_sml_004",
+      "source_line": 50715
+    },
+    "ab_mine_pyro_regionb_med_001": {
+      "canonical_name": "ab_mine_pyro_regionb_med_001",
+      "label": "RMB-LEST",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_001",
+      "source_line": 50716
+    },
+    "ab_mine_pyro_regionb_med_002": {
+      "canonical_name": "ab_mine_pyro_regionb_med_002",
+      "label": "RMB-JONG",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_002",
+      "source_line": 50717
+    },
+    "ab_mine_pyro_regionb_med_003": {
+      "canonical_name": "ab_mine_pyro_regionb_med_003",
+      "label": "RMB-KNAP",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_003",
+      "source_line": 50718
+    },
+    "ab_mine_pyro_regionb_med_004": {
+      "canonical_name": "ab_mine_pyro_regionb_med_004",
+      "label": "RMB-OXID",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_004",
+      "source_line": 50719
+    },
+    "ab_mine_pyro_regionb_med_005": {
+      "canonical_name": "ab_mine_pyro_regionb_med_005",
+      "label": "RMB-PALL",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_005",
+      "source_line": 50720
+    },
+    "ab_mine_pyro_regionb_med_006": {
+      "canonical_name": "ab_mine_pyro_regionb_med_006",
+      "label": "RMB-HELM",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_006",
+      "source_line": 50721
+    },
+    "ab_mine_pyro_regionb_med_007": {
+      "canonical_name": "ab_mine_pyro_regionb_med_007",
+      "label": "RMB-BASK",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_007",
+      "source_line": 50722
+    },
+    "ab_mine_pyro_regionb_med_008": {
+      "canonical_name": "ab_mine_pyro_regionb_med_008",
+      "label": "RMB-BUCK",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_008",
+      "source_line": 50723
+    },
+    "ab_mine_pyro_regionb_med_009": {
+      "canonical_name": "ab_mine_pyro_regionb_med_009",
+      "label": "RMB-LUNE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_009",
+      "source_line": 50724
+    },
+    "ab_mine_pyro_regionb_med_010": {
+      "canonical_name": "ab_mine_pyro_regionb_med_010",
+      "label": "RMB-GRAY",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_010",
+      "source_line": 50725
+    },
+    "ab_mine_pyro_regionb_med_011": {
+      "canonical_name": "ab_mine_pyro_regionb_med_011",
+      "label": "RMB-MAGE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_011",
+      "source_line": 50726
+    },
+    "ab_mine_pyro_regionb_med_012": {
+      "canonical_name": "ab_mine_pyro_regionb_med_012",
+      "label": "RMB-GADE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_012",
+      "source_line": 50727
+    },
+    "ab_mine_pyro_regionb_med_013": {
+      "canonical_name": "ab_mine_pyro_regionb_med_013",
+      "label": "RMB-WARB",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_013",
+      "source_line": 50728
+    },
+    "ab_mine_pyro_regionb_med_014": {
+      "canonical_name": "ab_mine_pyro_regionb_med_014",
+      "label": "RMB-HORN",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_014",
+      "source_line": 50729
+    },
+    "ab_mine_pyro_regionb_med_015": {
+      "canonical_name": "ab_mine_pyro_regionb_med_015",
+      "label": "RMB-KIFF",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_015",
+      "source_line": 50730
+    },
+    "ab_mine_pyro_regionb_med_016": {
+      "canonical_name": "ab_mine_pyro_regionb_med_016",
+      "label": "RMB-MUGG",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_016",
+      "source_line": 50731
+    },
+    "ab_mine_pyro_regionb_med_017": {
+      "canonical_name": "ab_mine_pyro_regionb_med_017",
+      "label": "RMB-PEKE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_med_017",
+      "source_line": 50732
+    },
+    "ab_mine_pyro_regionb_sml_001": {
+      "canonical_name": "ab_mine_pyro_regionb_sml_001",
+      "label": "RMB-TACK",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_sml_001",
+      "source_line": 50733
+    },
+    "ab_mine_pyro_regionb_sml_002": {
+      "canonical_name": "ab_mine_pyro_regionb_sml_002",
+      "label": "RMB-AXIL",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_sml_002",
+      "source_line": 50734
+    },
+    "ab_mine_pyro_regionb_sml_003": {
+      "canonical_name": "ab_mine_pyro_regionb_sml_003",
+      "label": "RMB-DARI",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_sml_003",
+      "source_line": 50735
+    },
+    "ab_mine_pyro_regionb_sml_004": {
+      "canonical_name": "ab_mine_pyro_regionb_sml_004",
+      "label": "RMB-YEAD",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionb_sml_004",
+      "source_line": 50736
+    },
+    "ab_mine_pyro_regionc_med_001": {
+      "canonical_name": "ab_mine_pyro_regionc_med_001",
+      "label": "RMB-NARY",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_001",
+      "source_line": 50737
+    },
+    "ab_mine_pyro_regionc_med_002": {
+      "canonical_name": "ab_mine_pyro_regionc_med_002",
+      "label": "RMB-JUTE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_002",
+      "source_line": 50738
+    },
+    "ab_mine_pyro_regionc_med_003": {
+      "canonical_name": "ab_mine_pyro_regionc_med_003",
+      "label": "RMB-TYRO",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_003",
+      "source_line": 50739
+    },
+    "ab_mine_pyro_regionc_med_004": {
+      "canonical_name": "ab_mine_pyro_regionc_med_004",
+      "label": "RMB-SPAW",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_004",
+      "source_line": 50740
+    },
+    "ab_mine_pyro_regionc_med_005": {
+      "canonical_name": "ab_mine_pyro_regionc_med_005",
+      "label": "RMB-MURK",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_005",
+      "source_line": 50741
+    },
+    "ab_mine_pyro_regionc_med_006": {
+      "canonical_name": "ab_mine_pyro_regionc_med_006",
+      "label": "RMB-OLLA",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_006",
+      "source_line": 50742
+    },
+    "ab_mine_pyro_regionc_med_007": {
+      "canonical_name": "ab_mine_pyro_regionc_med_007",
+      "label": "RMB-KYUS",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_007",
+      "source_line": 50743
+    },
+    "ab_mine_pyro_regionc_med_008": {
+      "canonical_name": "ab_mine_pyro_regionc_med_008",
+      "label": "RMB-DORY",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_008",
+      "source_line": 50744
+    },
+    "ab_mine_pyro_regionc_med_009": {
+      "canonical_name": "ab_mine_pyro_regionc_med_009",
+      "label": "RMB-RODE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_009",
+      "source_line": 50745
+    },
+    "ab_mine_pyro_regionc_med_010": {
+      "canonical_name": "ab_mine_pyro_regionc_med_010",
+      "label": "RMB-VERD",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_010",
+      "source_line": 50746
+    },
+    "ab_mine_pyro_regionc_med_011": {
+      "canonical_name": "ab_mine_pyro_regionc_med_011",
+      "label": "RMB-FLAG",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_011",
+      "source_line": 50747
+    },
+    "ab_mine_pyro_regionc_med_012": {
+      "canonical_name": "ab_mine_pyro_regionc_med_012",
+      "label": "RMB-RINE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_012",
+      "source_line": 50748
+    },
+    "ab_mine_pyro_regionc_med_013": {
+      "canonical_name": "ab_mine_pyro_regionc_med_013",
+      "label": "RMB-ALME",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_013",
+      "source_line": 50749
+    },
+    "ab_mine_pyro_regionc_med_014": {
+      "canonical_name": "ab_mine_pyro_regionc_med_014",
+      "label": "RMB-OAKS",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_014",
+      "source_line": 50750
+    },
+    "ab_mine_pyro_regionc_med_015": {
+      "canonical_name": "ab_mine_pyro_regionc_med_015",
+      "label": "RMB-NONG",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_015",
+      "source_line": 50751
+    },
+    "ab_mine_pyro_regionc_med_016": {
+      "canonical_name": "ab_mine_pyro_regionc_med_016",
+      "label": "RMB-LANX",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_016",
+      "source_line": 50752
+    },
+    "ab_mine_pyro_regionc_med_017": {
+      "canonical_name": "ab_mine_pyro_regionc_med_017",
+      "label": "RMB-SIJO",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_017",
+      "source_line": 50753
+    },
+    "ab_mine_pyro_regionc_med_018": {
+      "canonical_name": "ab_mine_pyro_regionc_med_018",
+      "label": "RMB-ARID",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_med_018",
+      "source_line": 50754
+    },
+    "ab_mine_pyro_regionc_sml_001": {
+      "canonical_name": "ab_mine_pyro_regionc_sml_001",
+      "label": "RMB-BORS",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_sml_001",
+      "source_line": 50755
+    },
+    "ab_mine_pyro_regionc_sml_002": {
+      "canonical_name": "ab_mine_pyro_regionc_sml_002",
+      "label": "RMB-LYES",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_sml_002",
+      "source_line": 50756
+    },
+    "ab_mine_pyro_regionc_sml_003": {
+      "canonical_name": "ab_mine_pyro_regionc_sml_003",
+      "label": "RMB-HADE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regionc_sml_003",
+      "source_line": 50757
+    },
+    "ab_mine_pyro_regiond_med_001": {
+      "canonical_name": "ab_mine_pyro_regiond_med_001",
+      "label": "RMB-UMUS",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_001",
+      "source_line": 50758
+    },
+    "ab_mine_pyro_regiond_med_002": {
+      "canonical_name": "ab_mine_pyro_regiond_med_002",
+      "label": "RMB-MEFF",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_002",
+      "source_line": 50759
+    },
+    "ab_mine_pyro_regiond_med_003": {
+      "canonical_name": "ab_mine_pyro_regiond_med_003",
+      "label": "RMB-SOWL",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_003",
+      "source_line": 50760
+    },
+    "ab_mine_pyro_regiond_med_004": {
+      "canonical_name": "ab_mine_pyro_regiond_med_004",
+      "label": "RMB-PIZE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_004",
+      "source_line": 50761
+    },
+    "ab_mine_pyro_regiond_med_005": {
+      "canonical_name": "ab_mine_pyro_regiond_med_005",
+      "label": "RMB-QINS",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_005",
+      "source_line": 50762
+    },
+    "ab_mine_pyro_regiond_med_006": {
+      "canonical_name": "ab_mine_pyro_regiond_med_006",
+      "label": "RMB-RAWN",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_006",
+      "source_line": 50763
+    },
+    "ab_mine_pyro_regiond_med_007": {
+      "canonical_name": "ab_mine_pyro_regiond_med_007",
+      "label": "RMB-LOWN",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_007",
+      "source_line": 50764
+    },
+    "ab_mine_pyro_regiond_med_008": {
+      "canonical_name": "ab_mine_pyro_regiond_med_008",
+      "label": "RMB-CRUE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_008",
+      "source_line": 50765
+    },
+    "ab_mine_pyro_regiond_med_009": {
+      "canonical_name": "ab_mine_pyro_regiond_med_009",
+      "label": "RMB-MARA",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_009",
+      "source_line": 50766
+    },
+    "ab_mine_pyro_regiond_med_010": {
+      "canonical_name": "ab_mine_pyro_regiond_med_010",
+      "label": "RMB-CHAM",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_010",
+      "source_line": 50767
+    },
+    "ab_mine_pyro_regiond_med_011": {
+      "canonical_name": "ab_mine_pyro_regiond_med_011",
+      "label": "RMB-RAIK",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_011",
+      "source_line": 50768
+    },
+    "ab_mine_pyro_regiond_med_012": {
+      "canonical_name": "ab_mine_pyro_regiond_med_012",
+      "label": "RMB-KELT",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_012",
+      "source_line": 50769
+    },
+    "ab_mine_pyro_regiond_med_013": {
+      "canonical_name": "ab_mine_pyro_regiond_med_013",
+      "label": "RMB-MOSK",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_013",
+      "source_line": 50770
+    },
+    "ab_mine_pyro_regiond_med_014": {
+      "canonical_name": "ab_mine_pyro_regiond_med_014",
+      "label": "RMB-JADE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_014",
+      "source_line": 50771
+    },
+    "ab_mine_pyro_regiond_med_015": {
+      "canonical_name": "ab_mine_pyro_regiond_med_015",
+      "label": "RMB-NENE",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_015",
+      "source_line": 50772
+    },
+    "ab_mine_pyro_regiond_med_016": {
+      "canonical_name": "ab_mine_pyro_regiond_med_016",
+      "label": "RMB-DIRK",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_016",
+      "source_line": 50773
+    },
+    "ab_mine_pyro_regiond_med_017": {
+      "canonical_name": "ab_mine_pyro_regiond_med_017",
+      "label": "RMB-PLEX",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_017",
+      "source_line": 50774
+    },
+    "ab_mine_pyro_regiond_med_018": {
+      "canonical_name": "ab_mine_pyro_regiond_med_018",
+      "label": "RMB-TIGS",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_med_018",
+      "source_line": 50775
+    },
+    "ab_mine_pyro_regiond_sml_001": {
+      "canonical_name": "ab_mine_pyro_regiond_sml_001",
+      "label": "RMB-HARK",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_sml_001",
+      "source_line": 50776
+    },
+    "ab_mine_pyro_regiond_sml_002": {
+      "canonical_name": "ab_mine_pyro_regiond_sml_002",
+      "label": "RMB-SEER",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_sml_002",
+      "source_line": 50777
+    },
+    "ab_mine_pyro_regiond_sml_003": {
+      "canonical_name": "ab_mine_pyro_regiond_sml_003",
+      "label": "RMB-SAIC",
+      "kind": "site",
+      "system": "Pyro",
+      "source_key": "ab_mine_pyro_regiond_sml_003",
+      "source_line": 50778
+    }
+  }
+}
