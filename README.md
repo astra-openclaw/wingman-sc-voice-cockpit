@@ -8,9 +8,19 @@ Ask which key your own profile uses, send verified Wingman commands from a phone
 and mark or navigate to your own saved locations. Voice and tablet actions share remembered
 system lights; the navigation desk stays on the same page.
 
-![SC Voice-Cockpit on a tablet, just after Wingman heard "deploy the landing gear"](docs/cockpit.png)
+![Upcoming SC Voice-Cockpit Annunciator UI in the Origin theme, with flight controls and integrated navigation](docs/origin-preview.png)
+
+**Upcoming UI preview — Origin theme.** The reviewed checkpoint 2 redesign adds direct
+panel tabs and a bottom microphone/activity dock. This is a real browser capture using
+synthetic navigation data, not a game screenshot. Design and initial implementation by
+Claude; integration and review by Astra. **This layout is not included in v1.2.1 yet.**
 
 ## What it looks like
+
+### Current release screenshots (v1.2.1)
+
+The screenshots below show the classic layout in the current download. The upcoming
+Annunciator layout is previewed above.
 
 Say it or tap it. A voice command lights the matching tablet buttons and shows what Wingman
 heard; a tap presses the same keys through Wingman, which registers it and answers.
